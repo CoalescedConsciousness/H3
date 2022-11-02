@@ -1,0 +1,14 @@
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\bin\Debug\net6.0\DataLayer.dll
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.dll
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
+C:\Users\Santiak\Desktop\EUC\H3\Database Prog\BookStore\BookStore\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll

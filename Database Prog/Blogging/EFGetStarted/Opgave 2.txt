@@ -1,0 +1,14 @@
+﻿1.1.1. Ja, men ikke navngivet "Posts", kun "Post" (som model filen)
+1.1.2. Fordi den opretter fra modellen og ikke konteksten(?)
+1.1.3. [NotMapped] gør således at propertien ikke indsættes som en kolonne i databasen, hvis det var det der blev hentydet til.
+
+1.2.1. Nej, se 1.3.
+
+1.3.1. Ja, enten med Attribute [Key], eller via override i OnModelCreating ( Entity(<Type>().HasKey(x => x.NewKeyProp)) )
+
+2.1.1. Ja, gør det blot ved ændring af DbSet Prop navn.
+
+2.2.1. [ForeignKey("RelatedModelName")]
+2.2.2. Refused to work; Date prop was added as a column in structure, but not displayed. Computed field not valid in display(?)
+2.2.3. Skipped due to above.
+

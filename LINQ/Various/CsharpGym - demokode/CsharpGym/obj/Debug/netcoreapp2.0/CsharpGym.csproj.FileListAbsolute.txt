@@ -1,0 +1,34 @@
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.deps.json
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.json
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.dev.json
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csprojResolveAssemblyReference.cache
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csproj.CoreCompileInputs.cache
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfoInputs.cache
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfo.cs
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\14. LINQ og Entity Framework - februar 2016\Demokode\2018-udgaven\CsharpGym\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.deps.json
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.json
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.dev.json
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csprojAssemblyReference.cache
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csproj.CoreCompileInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfoInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfo.cs
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\14. LINQ og Entity Framework Core - maj 2018\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.deps.json
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.json
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.runtimeconfig.dev.json
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\bin\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csprojAssemblyReference.cache
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfoInputs.cache
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.AssemblyInfo.cs
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.dll
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.pdb
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.csproj.CoreCompileInputs.cache
+E:\Kurser\13. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Demokode\CsharpGym - demokode\CsharpGym\obj\Debug\netcoreapp2.0\CsharpGym.genruntimeconfig.cache

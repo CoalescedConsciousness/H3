@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LINQbooks.Publisher">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Publisher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQbooks.Subject">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Subject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQbooks.Review">
+    <Position X="3.5" Y="6.75" Width="1.5" />
+    <AssociationLine Name="User" Type="LINQbooks.User">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.912" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAIAA=</HashCode>
+      <FileName>BusinessObjects\Review.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LINQbooks.Book">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Publisher" Type="LINQbooks.Publisher">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.714" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Subject" Type="LINQbooks.Subject">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="0.487" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Authors" Type="LINQbooks.Author">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.308" Y="0.053" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Reviews" Type="LINQbooks.Review">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.048" Y="0.914" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKgAEAAAQAAAEAECMAAAAAAAQBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Book.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Publisher" />
+      <Property Name="Subject" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Authors" />
+      <Property Name="Reviews" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LINQbooks.Author">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>BusinessObjects\Author.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQbooks.User">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

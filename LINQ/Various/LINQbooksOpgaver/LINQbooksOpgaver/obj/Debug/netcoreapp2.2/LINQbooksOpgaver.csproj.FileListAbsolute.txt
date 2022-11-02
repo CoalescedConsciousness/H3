@@ -1,0 +1,14 @@
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooksOpgaver.deps.json
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooksOpgaver.runtimeconfig.json
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooksOpgaver.runtimeconfig.dev.json
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooksOpgaver.dll
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooksOpgaver.pdb
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooks.dll
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\bin\Debug\netcoreapp2.2\LINQbooks.pdb
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.csprojAssemblyReference.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.csproj.CoreCompileInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.AssemblyInfoInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.AssemblyInfo.cs
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.csproj.CopyComplete
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.dll
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooksOpgaver\obj\Debug\netcoreapp2.2\LINQbooksOpgaver.pdb

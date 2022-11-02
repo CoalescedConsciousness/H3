@@ -1,0 +1,11 @@
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\bin\Debug\netcoreapp2.2\CSmorningGym.deps.json
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\bin\Debug\netcoreapp2.2\CSmorningGym.runtimeconfig.json
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\bin\Debug\netcoreapp2.2\CSmorningGym.runtimeconfig.dev.json
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\bin\Debug\netcoreapp2.2\CSmorningGym.dll
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\bin\Debug\netcoreapp2.2\CSmorningGym.pdb
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.csprojAssemblyReference.cache
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.csproj.CoreCompileInputs.cache
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.AssemblyInfoInputs.cache
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.AssemblyInfo.cs
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.dll
+F:\Kurser\14. LINQ og Entity Framework Core - september 2018\2. LINQ to Objects\Demokode\CSmorningGym\CSmorningGym\obj\Debug\netcoreapp2.2\CSmorningGym.pdb

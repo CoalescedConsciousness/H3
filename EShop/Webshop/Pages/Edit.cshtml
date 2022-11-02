@@ -1,0 +1,67 @@
+﻿@page "{productId:int?}"
+@model Webshop.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editing @Model.Product.Name</h1>
+
+@if (@Model.Product.Id > 0)
+{
+    <img src="~/img/@Url.Content(Model.Product.Id.ToString() + ".jpg")" class="img-fluid mb-4" />
+}
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Product.Id" />
+            <input type="hidden" asp-for="Product.Image"/>
+            <input type="hidden" asp-for="Product.CategoryId"/>
+            <input type="hidden" asp-for="formFile"/>
+
+            <dl>
+                <dt>
+                    <label asp-for="formFile"></label>
+                </dt>
+                <dd>
+                    <input asp-for="formFile" type="file">
+                    <span asp-validation-for="formFile"></span>
+                </dd>
+            </dl>
+            <div class="form-group">
+                <label asp-for="Product.Name" class="control-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price" class="control-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Reference" class="control-label"></label>
+                <input asp-for="Product.Reference" class="form-control" />
+                <span asp-validation-for="Product.Reference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.CategoryId" class="control-label"></label>
+                <select asp-items="Model.CategoryOptions" asp-for="SelectedCategory" class="form-control"></select>
+                <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                
+            </div>
+           @* <div class="form-group">
+                @Html.DropDownListFor(model => model.SelectedCategory, Model.CategoryOptions, "-- Select One --", new { @class = "form-control" })
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,42 @@
+﻿@page "{restaurantId:int}"
+
+@model WebApp.Pages.Restaurants.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Restaurant.Name</h2>
+<div>
+    <img src="~/img/@Url.Content(Model.Restaurant.Id.ToString() + ".jpg")" class="img-fluid" />
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Restaurant.Id)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Restaurant.Id)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Restaurant.Location)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Restaurant.Location)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Restaurant.Cuisine)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Restaurant.Cuisine)
+    </dd>
+</dl>
+
+
+<a asp-page="./List" class="btn btn-info">All Restaurants</a>
+
+@section footer {
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-info">@Model.Message</div>
+    }
+}

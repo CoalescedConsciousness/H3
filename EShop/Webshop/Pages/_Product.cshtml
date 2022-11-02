@@ -1,0 +1,32 @@
+﻿@using DAL.Entities
+@model Product
+
+ <tr>
+                <td>
+                    
+                @if (Model.Image == true)
+                {
+                    <img src="~/img/@Url.Content(Model.Id.ToString() + ".jpg")" class="img-fluid mb-4" width="100px" height="100px" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Category.Name)
+            </td>
+            <td>
+                <a asp-page="cart" asp-page-handler="buynow" asp-route-id="@Model.Id">Buy Now</a>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@Model.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@Model.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@Model.Id">Delete</a>
+            </td>
+        </tr>

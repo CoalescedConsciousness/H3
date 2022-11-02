@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Opgave 2.cs" />
+    <Compile Remove="Opgave 3.cs" />
+    <Compile Remove="Opgave 4.cs" />
+    <Compile Remove="Opgave 5.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LINQbooks\LINQbooks.csproj" />
+  </ItemGroup>
+
+</Project>

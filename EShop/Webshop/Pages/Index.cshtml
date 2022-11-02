@@ -1,0 +1,108 @@
+﻿@page
+@model Webshop.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>API</h1>
+<div>
+    <h3>All Products</h3>
+    <ul id="products">
+    [ID] // Name: Price
+    </ul>
+</div>
+<div>
+    <h3>Search by ID</h3>
+    <input type="text" id="prodId" size="5" />
+    <input type="button" value="Search" onclick="find();" />
+    <p id="product" />
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+    var uri = 'api/products';
+
+    $(document).ready(function () {
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function (data) {
+                
+                // On success, 'data' contains a list of products.
+                $.each(data, function (key, item) {
+                    // Add a list item for the product.
+                    $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                });
+            });
+    });
+
+    function formatItem(item) {
+        return '[' + item.id + ']' + ' // ' + item.name + ': ' + item.price;
+    }
+
+    function find() {
+        var id = $('#prodId').val();
+        $.getJSON(uri + '/' + id)
+            .done(function (data) {
+                $('#product').text(formatItem(data));
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#product').text('Error: ' + err);
+            });
+    }
+</script>
+<div>-----------------------------------------</div>
+<h1>Razor</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <select asp-for="ProductCategory" asp-items="Model.Category">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <select asp-for="@Model.PageSize"
+                asp-items="Html.GetEnumSelectList<Webshop.Pages.IndexModel.PageSizeEnum>()"
+                class="custom-select">
+            <option value="">Pagesize</option>
+        </select>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+@*<div class="card-deck">
+    @foreach (var prod in Model.Product)
+    {
+        <partial name="_Product" model="prod" />
+    }
+</div>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Reference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Category)
+            </th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+            {
+                <partial name="_Product" model="item" />
+            }
+}
+    </tbody>
+</table>

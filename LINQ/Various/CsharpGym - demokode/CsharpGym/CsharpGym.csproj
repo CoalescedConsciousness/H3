@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="10. Closure.cs" />
+    <Compile Remove="11. ExtensionMethodDemo.cs" />
+    <Compile Remove="12. BasicLINQDemo.cs" />
+    <Compile Remove="13 - DynamicAnonymousTypes.cs" />
+    <Compile Remove="13. AnonymousTypes.cs" />
+    <Compile Remove="13a. AnonymousTypes.cs" />
+    <Compile Remove="13b. DynamicAnonymousTypes.cs" />
+    <Compile Remove="14. ExpressionTrees.cs" />
+    <Compile Remove="1a. IntStak.cs" />
+    <Compile Remove="1b. ObjectStak.cs" />
+    <Compile Remove="1c. GenericStak.cs" />
+    <Compile Remove="1d. ConstrainedGeneric.cs" />
+    <Compile Remove="2. ImplicitlyTypedVariables.cs" />
+    <Compile Remove="3a. ObjectInitializer.cs" />
+    <Compile Remove="3b. CollectionInitializer.cs" />
+	<Compile Remove="3b. Opgave 1.cs" />
+    <Compile Remove="4a. DelegateAsMethodPointer.cs" />
+    <Compile Remove="4b. DelegateAsCallback.cs" />
+    <Compile Remove="5a. AnonymousMethod.cs" />
+    <Compile Remove="6a. Lambda.cs" />
+    <Compile Remove="6c. StandardDelegateVSlambda.cs" />
+    <Compile Remove="7. HardcodedFilter.cs" />
+    <Compile Remove="8. PredicateDelegate.cs" />
+    <Compile Remove="9. LambdaFilter.cs" />
+    <Compile Remove="ExpressionTrees.cs" />
+  </ItemGroup>
+
+</Project>

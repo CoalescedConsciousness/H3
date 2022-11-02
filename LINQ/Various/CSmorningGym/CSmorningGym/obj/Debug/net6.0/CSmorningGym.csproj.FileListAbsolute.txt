@@ -1,0 +1,15 @@
+C:\UVDev\CSmorningGym\CSmorningGym\bin\Debug\net6.0\CSmorningGym.exe
+C:\UVDev\CSmorningGym\CSmorningGym\bin\Debug\net6.0\CSmorningGym.deps.json
+C:\UVDev\CSmorningGym\CSmorningGym\bin\Debug\net6.0\CSmorningGym.runtimeconfig.json
+C:\UVDev\CSmorningGym\CSmorningGym\bin\Debug\net6.0\CSmorningGym.dll
+C:\UVDev\CSmorningGym\CSmorningGym\bin\Debug\net6.0\CSmorningGym.pdb
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.csproj.AssemblyReference.cache
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.GeneratedMSBuildEditorConfig.editorconfig
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.AssemblyInfoInputs.cache
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.AssemblyInfo.cs
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.csproj.CoreCompileInputs.cache
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.dll
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\refint\CSmorningGym.dll
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.pdb
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\CSmorningGym.genruntimeconfig.cache
+C:\UVDev\CSmorningGym\CSmorningGym\obj\Debug\net6.0\ref\CSmorningGym.dll

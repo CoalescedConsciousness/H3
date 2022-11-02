@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "LINQbooksOpgaver/1.0.0": {
+        "dependencies": {
+          "LINQbooks": "1.0.0"
+        },
+        "runtime": {
+          "LINQbooksOpgaver.dll": {}
+        }
+      },
+      "LINQbooks/1.0.0": {
+        "runtime": {
+          "LINQbooks.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LINQbooksOpgaver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LINQbooks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

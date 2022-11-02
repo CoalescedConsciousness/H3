@@ -1,0 +1,87 @@
+﻿@page
+@model Webshop.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h3>Add</h3>
+<form action="javascript:void(0);" method="POST" onsubmit="addProduct()">
+    <input type="text" id="product-name" placeholder="New Product">
+    <input type="text" id="product-reference" placeholder="Product Reference">
+    <input type="number" id="product-price" placeholder="Product Price">
+    <input type="submit" value="Add">
+</form>
+
+<script>
+    const uri = 'api/products/add';
+    let todos = [];
+
+    function addProduct() {
+        const addNameTextbox = document.getElementById('product-name');
+        const addReferenceTextbox = document.getElementById('product-reference')
+        const addPriceInt = document.getElementById('product-price')
+
+        const item = {
+            name: addNameTextbox.value.trim(),
+            reference: addReferenceTextbox.value.trim(),
+            price: addPriceInt.value.trim(),
+        };
+
+        fetch(uri, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+            .then(response => response.json())
+            .then(() => {
+                getItems();
+                addNameTextbox.value = '';
+            })
+            .catch(error => console.error('Unable to add product.', error));
+    }
+</script>
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Product.Name" class="control-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price" class="control-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Reference" class="control-label"></label>
+                <input asp-for="Product.Reference" class="form-control" />
+                <span asp-validation-for="Product.Reference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.CategoryId" class="control-label"></label>
+                <select asp-items="Model.CategoryOptions" asp-for="Product.CategoryId" class="form-control"></select>
+                <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

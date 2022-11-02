@@ -1,0 +1,14 @@
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\bin\Debug\Queries.exe.config
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\bin\Debug\Queries.exe
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\bin\Debug\Queries.pdb
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\obj\Debug\Queries.csprojAssemblyReference.cache
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\obj\Debug\Queries.exe
+E:\Kurser\14. LINQ og EF Core 3.0 - september 2019\1. CsharpGym\Queries\Queries\obj\Debug\Queries.pdb
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\bin\Debug\Queries.exe.config
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\bin\Debug\Queries.exe
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\bin\Debug\Queries.pdb
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\obj\Debug\Queries.csproj.AssemblyReference.cache
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\obj\Debug\Queries.csproj.SuggestedBindingRedirects.cache
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\obj\Debug\Queries.csproj.CoreCompileInputs.cache
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\obj\Debug\Queries.exe
+C:\Users\Santiak\Desktop\EUC\H3\LINQ\Queries\Queries\obj\Debug\Queries.pdb

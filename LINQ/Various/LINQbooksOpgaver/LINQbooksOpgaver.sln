@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQbooksOpgaver", "LINQbooksOpgaver\LINQbooksOpgaver.csproj", "{A5397217-CF02-481B-A69F-FE2EB21AE5CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQbooks", "LINQbooks\LINQbooks.csproj", "{BF0EE1DE-93EF-44B5-9FEA-E12D0B378BFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5397217-CF02-481B-A69F-FE2EB21AE5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5397217-CF02-481B-A69F-FE2EB21AE5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5397217-CF02-481B-A69F-FE2EB21AE5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5397217-CF02-481B-A69F-FE2EB21AE5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0EE1DE-93EF-44B5-9FEA-E12D0B378BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0EE1DE-93EF-44B5-9FEA-E12D0B378BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0EE1DE-93EF-44B5-9FEA-E12D0B378BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0EE1DE-93EF-44B5-9FEA-E12D0B378BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97427F4A-A4A1-450E-AC29-B3A1DDE18588}
+	EndGlobalSection
+EndGlobal

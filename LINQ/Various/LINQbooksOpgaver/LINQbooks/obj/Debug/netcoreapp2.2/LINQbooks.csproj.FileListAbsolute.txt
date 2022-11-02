@@ -1,0 +1,9 @@
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\bin\Debug\netcoreapp2.2\LINQbooks.deps.json
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\bin\Debug\netcoreapp2.2\LINQbooks.dll
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\bin\Debug\netcoreapp2.2\LINQbooks.pdb
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.csprojAssemblyReference.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.csproj.CoreCompileInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.AssemblyInfoInputs.cache
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.AssemblyInfo.cs
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.dll
+E:\Kurser\14. LINQ og Entity Framework Core - december 2018\2. LINQ to Objects\LINQbooksOpgaver\LINQbooks\obj\Debug\netcoreapp2.2\LINQbooks.pdb
