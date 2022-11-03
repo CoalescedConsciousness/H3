@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MHhRh8QC7tbPwk3CwRPTV3NIO4FwHcV3opLwE6RnUq1JsqVbfQXpFZO99vIox94kcWOqaMlxnRrC8y9V8Ka9Lw==",
+  "dgSpecHash": "+vZkY//ZAynbZUXsJTY0GdeODsnSG2xCAPY90fZhKaDJ89+WApUy1GHpK8VZxHteoieFF0nfHnOo0kg7jDKeIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj",
+  "projectFilePath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Santiak\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Santiak\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",

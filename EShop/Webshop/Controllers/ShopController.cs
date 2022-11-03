@@ -35,12 +35,10 @@ namespace Webshop.Controllers
             var product = _product.GetProductById(id);
             if (product == null)
             {
-                Console.WriteLine("TESTER");
                 return NotFound();
             }
-            Console.WriteLine("TESTER 222222");
             return Ok(product);
-        }
+        } 
 
         [Route("products/add")]
         [HttpPost]

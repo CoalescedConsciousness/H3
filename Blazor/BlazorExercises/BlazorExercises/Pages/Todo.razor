@@ -1,0 +1,24 @@
+﻿@page "/todo"
+@using BlazorExercises.Services
+@inject ITodoServices TodoServices
+
+
+<h3>Todo (@ts.todos.Count(todo => !todo.IsDone))</h3>
+<ul>
+	@foreach (var todo in ts.todos)
+	{
+		<li>
+			<input type="checkbox" @bind="todo.IsDone"/>
+			<input @bind="todo.Title"/>
+		</li>
+
+	}
+</ul>
+
+<input placeholder="Something todo" @bind="ts.newTodo"/>
+<button @onclick="ts.AddTodo">Add ToDo</button>
+
+@code
+{
+	TodoServices ts = new TodoServices();
+}

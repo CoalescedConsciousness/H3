@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\Webshop\\Webshop.csproj": {}
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\Webshop\\Webshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj": {
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Santiak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Santiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj": {
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj",
+        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj",
         "projectName": "EShop",
-        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj",
+        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj",
         "packagesPath": "C:\\Users\\Santiak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\obj\\",
+        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Santiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -111,8 +111,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj"
               }
             }
           }
@@ -154,14 +154,14 @@
         }
       }
     },
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\ServiceLayer.csproj": {
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\ServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\ServiceLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\ServiceLayer.csproj",
         "projectName": "ServiceLayer",
-        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\ServiceLayer.csproj",
+        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\ServiceLayer.csproj",
         "packagesPath": "C:\\Users\\Santiak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\obj\\",
+        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Santiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -178,11 +178,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj": {
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj",
+        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj",
         "projectName": "TestProject1",
-        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj",
+        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj",
         "packagesPath": "C:\\Users\\Santiak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\obj\\",
+        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Santiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -250,11 +250,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj"
               }
             }
           }
@@ -310,14 +310,14 @@
         }
       }
     },
-    "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\Webshop\\Webshop.csproj": {
+    "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\Webshop\\Webshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\Webshop\\Webshop.csproj",
+        "projectUniqueName": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\Webshop\\Webshop.csproj",
         "projectName": "Webshop",
-        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\Webshop\\Webshop.csproj",
+        "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\Webshop\\Webshop.csproj",
         "packagesPath": "C:\\Users\\Santiak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\Webshop\\obj\\",
+        "outputPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\Webshop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Santiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -334,17 +334,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\EShop\\EShop.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\EShop\\EShop.csproj"
               },
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\ServiceLayer.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\ServiceLayer\\ServiceLayer.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\ServiceLayer.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\ServiceLayer\\ServiceLayer.csproj"
               },
-              "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj": {
-                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\TestProject1\\TestProject1.csproj"
+              "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj": {
+                "projectPath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\TestProject1\\TestProject1.csproj"
               }
             }
           }
@@ -403,7 +403,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C/L9nSLIksuXwSIS99Z2qNJxP/ASkJVSiTkkmDWrMZaMh/tVUfj1pCJp0xONB9lJMUdjKjRNPsii9Ae9lhhu0A==",
+  "dgSpecHash": "Ti8IU2qMSTwPDAIf/S9xdpapFtnscHRNZ7VeYreRxwJdbxMy09dYRyFw0xvVLJCLFHjgGH0M5VGAmmkM1NEVfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Santiak\\Desktop\\EUC\\H3\\EShop\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\EShop\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Santiak\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Santiak\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",

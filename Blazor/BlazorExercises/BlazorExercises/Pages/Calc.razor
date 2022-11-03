@@ -1,0 +1,83 @@
+﻿@page "/calc"
+
+<h3>Calc</h3>
+<ul>
+	@foreach (var x in calculations)
+	{
+		<li>
+			<div>
+				@x.Num1 @x.Operation @x.Num2 = @x.Result
+			</div>
+		</li>
+
+	}
+</ul>
+<div>
+	<input placeholder="First number" @bind="num1"/>
+	<input placeholder="Second number" @bind="num2"/>
+</div>
+<div>
+	<button @onclick="Addition">Add</button>
+	<button @onclick="Subtraction">Subtract</button>
+	<button @onclick="Multiplication">Multiply</button>
+	<button @onclick="Division">Divide</button>
+</div>
+<div>
+	<button @onclick="Clear">Clear</button>
+</div>
+@*<h2>@text</h2>
+<input type="text" @bind="text" @bind:event="oninput"/>*@
+@code {
+	//public string text;
+	private List<CalcItem> calculations = new();
+
+	private float num1;
+	private float num2;
+
+	private void Addition()
+	{
+		calculations.Add(new CalcItem
+			{
+				Operation = "+",
+				Num1 = num1,
+				Num2 = num2,
+				Result = num1 + num2
+			});
+	}
+
+	private void Subtraction()
+	{
+		calculations.Add(new CalcItem
+			{
+				Operation = "-",
+				Num1 = num1,
+				Num2 = num2,
+				Result = num1 - num2
+			});
+	}
+	private void Multiplication()
+	{
+		calculations.Add(new CalcItem
+			{
+				Operation = "*",
+				Num1 = num1,
+				Num2 = num2,
+				Result = num1 * num2
+			});
+	}
+	private void Division()
+	{
+		calculations.Add(new CalcItem
+			{
+				Operation = "/",
+				Num1 = num1,
+				Num2 = num2,
+				Result = num1 / num2
+			});
+	}
+	private void Clear()
+	{
+		calculations.Clear();
+	}
+}
+
