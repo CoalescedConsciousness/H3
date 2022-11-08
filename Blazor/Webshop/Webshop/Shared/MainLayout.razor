@@ -1,0 +1,54 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager Nav
+@inject ILocalStorageService ls
+
+<PageTitle>Webshop</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <button class="btn btn-success" @onclick='() => Nav.NavigateTo("/cart")'>@cartCount <i class="fas fa-shopping-basket"></i></button>
+        </div>
+
+        <article class="content px-4">
+            <CascadingValue Value="this">
+                @Body
+            </CascadingValue>
+        </article>
+    </main>
+</div>
+
+@code {
+    int cartCount { get; set; } = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (await ls.ContainKeyAsync("Cart"))
+        {
+            string cartStr = await ls.GetItemAsStringAsync("Cart");
+            var cart = cartStr.ToCartModels();
+
+            cartCount = cart.Select(b => b.Quantity).Sum();
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task Update()
+    {
+        if (await ls.ContainKeyAsync("Cart"))
+        {
+            string basketString = await ls.GetItemAsStringAsync("Cart");
+            var basket = basketString.ToCartModels();
+
+            cartCount = basket.Select(b => b.Quantity).Sum();
+        }
+        StateHasChanged();
+    }
+
+
+}

@@ -1,0 +1,65 @@
+﻿@page "/contact"
+@using System.Text
+
+<PageTitle>Contact</PageTitle>
+
+<h1>Contact</h1>
+<h3>Contacts: @contacts.Count()</h3>
+<ul>
+	@foreach (var c in contacts)
+	{
+		<li>
+			@c.Name -- @c.Email -- @if (c.Image != null)
+			{
+				<img src='data:image;base64,@(Convert.ToBase64String(c.Image))' width="40" height="40" />
+			}
+			<button @onclick="@(() => contacts.Remove(c))">Remove</button>
+		</li>
+
+	}
+</ul>
+
+<input placeholder="Contact Name" @bind="name"/>
+<input placeholder="Contact Email" @bind="email"/>
+<InputFile OnChange="@LoadFile"/>
+<button @onclick="AddContact">Add Contact</button>
+
+@code
+{
+	private string name;
+	private string email;
+	private byte[]? image;
+	List<ContactItem> contacts = new();
+
+	async Task LoadFile(InputFileChangeEventArgs e)
+	{
+		try
+		{
+			using (var reader = new StreamReader(e.File.OpenReadStream()))
+			{
+				var format = "image/jpeg";
+				var resizedImageFile = await e.File.RequestImageFileAsync(format, 800, 800);
+				var buffer = new byte[resizedImageFile.Size];
+				await resizedImageFile.OpenReadStream().ReadAsync(buffer);
+				image = buffer;
+			}
+		}
+		catch (Exception ex)
+		{
+			System.Console.WriteLine(ex.Message);
+		}
+	}
+	private void AddContact()
+	{
+		contacts.Add(new ContactItem()
+			{
+				Name = name,
+				Email = email,
+				Image = image
+			});
+	}
+	private void RemoveContact(ContactItem c)
+	{
+		contacts.Remove(c);
+	}
+}

@@ -1,0 +1,33 @@
+﻿@page "/product/{Id:int}"
+@inject HttpClient cl
+@inject NavigationManager Nav
+<h3>Product</h3>
+@if (product != null)
+{
+    <div class="row">
+        
+        <div class="col-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h1>@product.Name</h1>
+                </div>
+                <div class="card-footer"><h3>@product.Price Kr.</h3> <a href="#" class="btn btn-success"><i class="fas fa-shopping-basket"></i> Add to basket</a></div>
+                <button @onclick='() => Nav.NavigateTo($"/product/edit/{product.Id}")' class="btn btn-info"><i class="fas fa-plus"></i> Edit</button>
+
+            </div>
+            
+        </div>
+    </div>
+}
+
+
+@code {
+	[Parameter]
+	public int Id { get; set; }
+	private Product product { get; set; }
+	protected async override Task OnInitializedAsync()
+	{
+		product = await cl.GetFromJsonAsync<Product>($"/api/product/{Id}");
+		await base.OnInitializedAsync();
+	}
+}

@@ -3,22 +3,47 @@
 @inject ITodoServices TodoServices
 
 
+
 <h3>Todo (@ts.todos.Count(todo => !todo.IsDone))</h3>
 <ul>
 	@foreach (var todo in ts.todos)
 	{
 		<li>
-			<input type="checkbox" @bind="todo.IsDone"/>
-			<input @bind="todo.Title"/>
+			<input type="checkbox" @bind="todo.IsDone"/> @todo.Title -- @todo.Desc
 		</li>
 
 	}
 </ul>
-
-<input placeholder="Something todo" @bind="ts.newTodo"/>
+<EditForm Model="@todoItem" OnValidSubmit="@HandleValidSubmit">
+	<DataAnnotationsValidator/>
+	<ValidationSummary/>
+	<p>
+		<label>
+			Title: <InputText id="title" @bind-Value="todoItem.Title"/>
+		</label>
+	</p>
+	<p>
+		<label>
+			Description: <InputText id="description" @bind-Value="todoItem.Desc"/>
+		</label>
+	</p>
+	<button type="submit">Submit</button>
+</EditForm>
+@*<input placeholder="Something todo" @bind="ts.newTodo"/>
 <button @onclick="ts.AddTodo">Add ToDo</button>
-
+*@
 @code
 {
+	private TodoItem todoItem = new();
 	TodoServices ts = new TodoServices();
+
+	private void HandleValidSubmit()
+	{
+		ts.todos.Add(new TodoItem
+			{
+				Title = todoItem.Title,
+				Desc = todoItem.Desc,
+			});
+		
+	}
 }

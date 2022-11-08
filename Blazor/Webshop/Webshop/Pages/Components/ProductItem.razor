@@ -1,0 +1,71 @@
+﻿@using Webshop.DAL.Models
+@inject NavigationManager Nav
+@inject ILocalStorageService ls
+<div class="card">
+@*    <img class="card-img-top ProdImage" src="@( Nav.BaseUri + "api/image/" + ProductModel.Id + "/1")" alt="@ProductModel.Name" />
+*@    <div class="card-body">
+        <h5 class="card-title"><button class="btn btn-link p-0" @onclick="GotoProduct">@Product.Name</button></h5>
+        <p class="card-text">Price: @Product.Price</p>
+        <p class="card-text">Active: @Product.IsActive</p>
+        <button @onclick="AddToCart" class="btn btn-success"><i class="fas fa-shopping-basket"></i> Add</button>
+        @*<button @onclick="RemoveProduct" class="btn btn-warning"> Remove</button>*@
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Product Product { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnAddToCart { get; set; }
+
+    public void GotoProduct()
+    {
+        Nav.NavigateTo($"/Product/{Product.Id}");
+    }
+    
+    public async Task AddToCart(MouseEventArgs e)
+    {
+        if (await ls.ContainKeyAsync("Cart"))
+        {
+            string cartStr = await ls.GetItemAsStringAsync("Cart");
+
+            var cart = cartStr.ToCartModels();
+
+            var existing = cart.Where(b => b.Id == Product.Id).FirstOrDefault();
+
+            if (existing == null)
+            {
+                cart.Add(new Cart()
+                    {
+                        Id = Product.Id,
+                        Name = Product.Name,
+                        Price = Product.Price
+                    });
+            }
+            else
+            {
+                int index = cart.IndexOf(existing);
+
+                cart[index].Quantity++;
+            }
+
+            await ls.SetItemAsStringAsync("Cart", cart.ToStorageString());
+        }
+        else
+        {
+            var cart = new List<Cart>();
+
+            cart.Add(new Cart()
+                {
+                    Id = Product.Id,
+                    Name = Product.Name,
+                    Price = Product.Price
+                });
+
+            await ls.SetItemAsStringAsync("Cart", cart.ToStorageString());
+        }
+        StateHasChanged();
+        await OnAddToCart.InvokeAsync(e);
+    }
+}

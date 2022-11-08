@@ -1,0 +1,77 @@
+﻿@page "/gallery"
+@using System.Text
+@inject IWebHostEnvironment env
+<PageTitle>Gallery</PageTitle>
+
+<h1>Gallery (@gallery.Count())</h1>
+<ul>
+	@foreach (var g in gallery)
+	{
+		<li>
+			@if (g.Image != null)
+			{
+
+				var imageUri = System.Web.HttpUtility.UrlEncodeUnicode(Convert.ToBase64String(g.Image));
+
+				<a href="/gallery/@imageUri">
+				<img src='data:image/jpg;base64,@(Convert.ToBase64String(g.Image))' width="40" height="40" />
+				</a>
+			}
+			<button @onclick="@(() => gallery.Remove(g))">Remove</button>
+		</li>
+
+	}
+</ul>
+
+<InputFile OnChange="@LoadFile" />
+<button @onclick="AddContact">Add Contact</button>
+
+@code
+{
+	private int id = 0;
+	private byte[]? image;
+	List<GalleryItem> gallery = new();
+
+	async Task LoadFile(InputFileChangeEventArgs e)
+	{
+		IReadOnlyList<IBrowserFile> selectedFiles;
+		selectedFiles = e.GetMultipleFiles();
+		try
+		{
+			foreach (var file in selectedFiles)
+			{
+				Stream stream = file.OpenReadStream();
+				var path = $"{env.WebRootPath}\\{file.Name}";
+				FileStream fs = File.Create(path);
+				await stream.CopyToAsync(fs);
+				stream.Close();
+				fs.Close();
+			}
+			using (var reader = new StreamReader(e.File.OpenReadStream()))
+			{
+				var format = "image/jpeg";
+				var resizedImageFile = await e.File.RequestImageFileAsync(format, 800, 800);
+				var buffer = new byte[resizedImageFile.Size];
+				await resizedImageFile.OpenReadStream().ReadAsync(buffer);
+				image = buffer;
+			}
+		}
+		catch (Exception ex)
+		{
+			System.Console.WriteLine(ex.Message);
+		}
+	}
+	private void AddContact()
+	{
+		gallery.Add(new GalleryItem()
+			{
+				Id = id,
+				Image = image
+			});
+			id++;
+	}
+	private void RemoveContact(GalleryItem g)
+	{
+		gallery.Remove(g);
+	}
+}

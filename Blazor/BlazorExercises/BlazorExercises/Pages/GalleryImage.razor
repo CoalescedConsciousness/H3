@@ -1,0 +1,14 @@
+﻿@page "/gallery/{*image}"
+
+<img src='data:image;base64,@image' width="800" height="800" />
+@{Console.WriteLine(image);}
+
+@code {
+
+	[Parameter]
+	public string image { get; set; }
+
+
+	
+}
+5

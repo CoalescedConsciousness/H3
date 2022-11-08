@@ -1,0 +1,51 @@
+﻿@page "/product/edit/{Id:int}"
+@inject NavigationManager Nav
+@inject HttpClient cl
+@inject EditContext ec
+<h3>Edit Product</h3>
+<EditForm EditContext="@ec" OnValidSubmit="@OnValidSubmit">
+	<div class="form-group">
+		<label for="InputName">Name</label>
+		<input type="text" @bind-value="product.Name" class="form-control" id="InputName">
+	</div>
+	<div class="form-group">
+		<label for="InputName">Price</label>
+		<input type="text" @bind-value="product.Price" class="form-control" id="InputName">
+	</div>
+	<div class="form-group">
+		<label for="InputName">Active</label>
+		<input type="text" @bind-value="product.IsActive" class="form-control" id="InputName">
+	</div>
+
+	<button type="submit">Edit</button>
+</EditForm>
+
+@code {
+	[Parameter]
+	public int Id { get; set; }
+	private Product product { get; set; }
+	private EditContext editContext;
+
+	
+	protected override async Task OnInitializedAsync()
+	{
+		var p = await cl.GetFromJsonAsync<Product>($"/api/product/{Id}");
+		await base.OnInitializedAsync();
+
+		product.Name = p.Name;
+		product.Price = p.Price;
+		product.IsActive = p.IsActive;
+		editContext = new EditContext(product);
+	}
+
+	public async Task OnValidSubmit()
+	{
+		var response = await cl.PutAsJsonAsync<Product>("/api/Product", product);
+
+		if (response.StatusCode == System.Net.HttpStatusCode.OK)
+		{
+			Nav.NavigateTo("/");
+		}
+		else Nav.NavigateTo($"product/edit/{Id}");
+	}
+}

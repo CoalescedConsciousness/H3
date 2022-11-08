@@ -1,0 +1,54 @@
+﻿@page "/Cart"
+@inject ILocalStorageService ls
+<h3>Cart</h3>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" @onclick="ClearCartAsync" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Clear cart</button>
+</div>
+
+@if (shopCart != null)
+{
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in shopCart)
+            {
+                <tr>
+                    <th scope="row">@prod.Name</th>
+                    <td>@prod.Price</td>
+                    <td>@prod.Quantity</td>
+                    <td>@(prod.Price * prod.Quantity)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    public List<Cart> shopCart { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        @if (await ls.ContainKeyAsync("Cart"))
+        {
+            string cartStr = await ls.GetItemAsStringAsync("Cart");
+
+            shopCart = cartStr.ToCartModels();
+        }
+        base.OnInitialized();
+    }
+
+    public async Task ClearCartAsync()
+    {
+        await ls.SetItemAsStringAsync("Cart", "");
+        await OnInitializedAsync();
+    }
+}

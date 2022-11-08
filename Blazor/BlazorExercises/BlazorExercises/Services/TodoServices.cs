@@ -1,6 +1,8 @@
-﻿namespace BlazorExercises.Services
+﻿using BlazorExercises.Entities;
+
+namespace BlazorExercises.Services
 {
-	public class TodoServices : ITodoServices
+    public class TodoServices : ITodoServices
 	{
         public List<TodoItem> todos = new();
         public string? newTodo;

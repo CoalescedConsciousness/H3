@@ -1,0 +1,26 @@
+﻿@page "/"
+@inject HttpClient cl
+<div class="row">
+    @if (Products != null)
+    {
+        @foreach (var prod in Products)
+        {
+            <div class="col-4 mt-1 mb-1">
+                <ProductItem Product="prod" OnAddToCart="() => MainLayout.Update()"/>
+            </div>
+        }
+    }
+</div>
+
+
+@code{
+
+    [CascadingParameter] 
+    public MainLayout MainLayout { get; set; }
+	private List<Product> Products { get; set; }
+	protected override async Task OnInitializedAsync()
+	{
+		Products = await cl.GetFromJsonAsync<List<Product>>("api/product/all");
+
+	}
+}
