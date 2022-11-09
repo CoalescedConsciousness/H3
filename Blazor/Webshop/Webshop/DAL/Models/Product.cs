@@ -11,6 +11,7 @@ namespace Webshop.DAL.Models
         [Required]
         public float Price { get; set; }
 
+        [Required]
         public bool IsActive { get; set; } = false;
 
     }

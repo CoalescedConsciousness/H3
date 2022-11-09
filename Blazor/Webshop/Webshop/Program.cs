@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Blazored.LocalStorage;
 using Webshop;
 
+#region builder
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<WebshopContext>(options =>
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddHttpClient();
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false)
@@ -30,6 +32,8 @@ builder.Services.AddScoped(sp =>
     client.BaseAddress = new Uri(baseAddress);
     return client;
 });
+#endregion
+#region app
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,9 +50,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseMvcWithDefaultRoute();
-
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 
 app.Run();
+#endregion

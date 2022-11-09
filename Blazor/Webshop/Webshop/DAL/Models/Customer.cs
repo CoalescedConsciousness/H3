@@ -8,6 +8,5 @@ namespace Webshop.DAL.Models
         public string FName { get; set; }
         public string LName { get; set; }
         public string Mail { get; set; }
-        public IEnumerable<CustomerLocation> Locations { get; set; }
     }
 }

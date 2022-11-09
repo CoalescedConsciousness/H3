@@ -1,0 +1,76 @@
+﻿@page "/checkout"
+@inject ILocalStorageService ls
+@inject HttpClient cl
+@inject NavigationManager Nav
+<h3>Checkout</h3>
+
+<EditForm Model="customer" OnValidSubmit="@ProcessCart">
+    <row>
+    <label for="name">Name:</label>
+    <InputText id="name" @bind-Value="customer.FName"/>
+    </row>
+    <row>
+    <label for="surname">Surname:</label>
+    <InputText id="surname" @bind-Value="customer.LName"/>
+    </row>
+    <label for="mail">E-Mail:</label>
+    <InputText id="mail" @bind-Value="customer.Mail"/>
+
+    <button type="submit">Process</button>
+</EditForm>
+
+@code {
+    public Customer customer = new();
+    public Order o = new();
+    public async Task ProcessCart()
+    {
+        Order newOrder = new();
+        string cartStr = await ls.GetItemAsStringAsync("Cart");
+        List<Cart> cart = cartStr.ToCartModels();
+
+        newOrder.Products = cart.Select(x => new Product()
+			{
+				Id = x.Id,
+				Name = x.Name,
+				Price = x.Price,
+
+			}).ToList();
+
+        Customer partner = null;
+
+        try
+        {
+            partner = await cl.GetFromJsonAsync<Customer>($"/api/Customer/email/{customer.Mail}");
+        }
+        catch (Exception e)
+        {
+            //do not fail if customer is not there
+        };
+
+        if (partner == null)
+        {
+            partner = new()
+            {
+                FName = customer.FName,
+                LName = customer.LName,
+                Mail = customer.Mail
+            };
+            var CustomerCreateResult = await cl.PostAsJsonAsync<Customer>("/api/Customer",customer);
+
+            if (CustomerCreateResult.IsSuccessStatusCode)
+            {
+                partner = await cl.GetFromJsonAsync<Customer>($"/api/Customer/email/{customer.Mail}");
+            }
+        }
+
+        newOrder.CustomerId = partner.Id;
+
+        var result = await cl.PostAsJsonAsync<Order>("/api/Order", newOrder);
+
+		
+	}
+	protected override async Task OnInitializedAsync()
+	{
+		await base.OnInitializedAsync();
+	}
+}

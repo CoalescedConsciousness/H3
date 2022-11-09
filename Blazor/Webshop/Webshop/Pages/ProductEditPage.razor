@@ -1,9 +1,10 @@
 ﻿@page "/product/edit/{Id:int}"
 @inject NavigationManager Nav
 @inject HttpClient cl
-@inject EditContext ec
 <h3>Edit Product</h3>
-<EditForm EditContext="@ec" OnValidSubmit="@OnValidSubmit">
+<EditForm Model="product" OnValidSubmit="@OnValidSubmit">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
 	<div class="form-group">
 		<label for="InputName">Name</label>
 		<input type="text" @bind-value="product.Name" class="form-control" id="InputName">
@@ -13,36 +14,64 @@
 		<input type="text" @bind-value="product.Price" class="form-control" id="InputName">
 	</div>
 	<div class="form-group">
-		<label for="InputName">Active</label>
-		<input type="text" @bind-value="product.IsActive" class="form-control" id="InputName">
+		<label for="StatusInfo">Active:</label>
+		<span id="StatusInfo">@product.IsActive</span>
 	</div>
 
 	<button type="submit">Edit</button>
 </EditForm>
+@if (product.IsActive)
+{	
+	<button onclick="@StoreProduct" class="btn btn-warning">Deactivate</button>
+}
+else
+{
+	<button onclick="@DeleteProduct" class="btn btn-danger">Delete</button>
+}
+
+
 
 @code {
 	[Parameter]
 	public int Id { get; set; }
-	private Product product { get; set; }
+	private Product product { get; set; } = new();
 	private EditContext editContext;
 
-	
+	private async Task StoreProduct()
+	{
+		product.IsActive = false;
+		var re = await cl.PutAsJsonAsync<Product>($"/api/product/{Id}", product);
+		if (re.StatusCode == System.Net.HttpStatusCode.OK || re.StatusCode == System.Net.HttpStatusCode.NoContent)
+		{
+			Nav.NavigateTo("/");
+		}
+		else Nav.NavigateTo($"product/edit/{Id}");
+	}
+
+	private async Task DeleteProduct()
+	{
+		var re = await cl.DeleteAsync($"/api/product/{Id}");
+		if (re.StatusCode == System.Net.HttpStatusCode.NoContent)
+		{
+			Nav.NavigateTo("/");
+		}
+	}
 	protected override async Task OnInitializedAsync()
 	{
-		var p = await cl.GetFromJsonAsync<Product>($"/api/product/{Id}");
+		var re = await cl.GetFromJsonAsync<Product>($"/api/product/{Id}");
 		await base.OnInitializedAsync();
-
-		product.Name = p.Name;
-		product.Price = p.Price;
-		product.IsActive = p.IsActive;
-		editContext = new EditContext(product);
+		product.Id = Id;
+		product.Name = re.Name;
+		product.Price = re.Price;
+		product.IsActive = re.IsActive;
+		editContext = new(product);
 	}
 
 	public async Task OnValidSubmit()
 	{
-		var response = await cl.PutAsJsonAsync<Product>("/api/Product", product);
+		var re = await cl.PutAsJsonAsync<Product>($"/api/Product/{Id}", product);
 
-		if (response.StatusCode == System.Net.HttpStatusCode.OK)
+		if (re.StatusCode == System.Net.HttpStatusCode.OK || re.StatusCode == System.Net.HttpStatusCode.NoContent)
 		{
 			Nav.NavigateTo("/");
 		}

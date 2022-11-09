@@ -15,6 +15,7 @@ namespace Webshop.Services
 
         public async Task CreateAsync(Product product)
         {
+            Console.WriteLine(product.Id);
             _context.Add(product);
             await _context.SaveChangesAsync();
         }
@@ -24,9 +25,11 @@ namespace Webshop.Services
             throw new NotImplementedException();
         }
 
-        public Task EditAsync(Product product)
+        public async Task EditAsync(Product product)
         {
-            throw new NotImplementedException();
+            _context.Product.Update(product);
+            await _context.SaveChangesAsync();
+
         }
 
         public async Task<List<Product>> GetAllAsync()
@@ -40,7 +43,7 @@ namespace Webshop.Services
         }
         public async Task RemoveAsync(Product product)
         {
-            _context.Remove(product);
+            _context.Product.Remove(product);
             await _context.SaveChangesAsync();
 
         }
@@ -48,6 +51,5 @@ namespace Webshop.Services
         {
             return await _context.Product.FindAsync(Id);
         }
-
     }
 }

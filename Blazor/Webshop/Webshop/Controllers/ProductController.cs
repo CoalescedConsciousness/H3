@@ -47,42 +47,42 @@ namespace Webshop.Controllers
 
         //// PUT: api/Products/5
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutProduct(int id, Product product)
-        //{
-        //    if (id != product.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProduct(int id, Product product)
+        {
+            if (id != product.Id)
+            {
+                return BadRequest();
+            }
 
-            
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!ProductExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
 
-        //    return NoContent();
-        //}
+            try
+            {
+                await _context.EditAsync(product);
+                return Ok();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        [Route("create")]
+        public async Task<IActionResult> CreateProduct(Product product)
         {
-            _context.CreateAsync(product);
+            await _context.CreateAsync(product);
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return Ok("Created");
         }
 
         // DELETE: api/Products/5
@@ -95,7 +95,7 @@ namespace Webshop.Controllers
                 return NotFound();
             }
 
-            _context.RemoveAsync(product);
+            await _context.RemoveAsync(product);
 
             return NoContent();
         }

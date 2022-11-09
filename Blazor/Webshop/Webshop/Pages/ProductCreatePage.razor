@@ -1,0 +1,40 @@
+﻿@page "/product/create"
+@inject HttpClient cl
+@inject NavigationManager Nav
+
+<h3>Create Product</h3>
+
+<EditForm Model="product" OnValidSubmit="@OnValidSubmitCreate">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+	<div class="form-group">
+		<label for="InputName">Name</label>
+		<input type="text" @bind-value="product.Name" class="form-control" id="InputName">
+	</div>
+	<div class="form-group">
+		<label for="InputName">Price</label>
+		<input type="text" @bind-value="product.Price" class="form-control" id="InputName">
+	</div>
+	<div class="form-group">
+		<label for="InputCheckbox">Active</label>
+		<InputCheckbox @bind-Value=product.IsActive />
+	</div>
+
+	<button type="submit">Create</button>
+</EditForm>
+
+@code {
+
+	private Product product = new();
+
+	public async Task OnValidSubmitCreate()
+	{
+		var response = await cl.PostAsJsonAsync<Product>("/api/Product/create", product);
+
+		if (response.StatusCode == System.Net.HttpStatusCode.OK)
+		{
+			Nav.NavigateTo("/");
+		}
+
+	}
+}

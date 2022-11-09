@@ -1,5 +1,6 @@
 ﻿@page "/Cart"
 @inject ILocalStorageService ls
+@inject NavigationManager Nav
 <h3>Cart</h3>
 
 <div class="btn-group" role="group" aria-label="Basic example">
@@ -24,16 +25,23 @@
                     <th scope="row">@prod.Name</th>
                     <td>@prod.Price</td>
                     <td>@prod.Quantity</td>
-                    <td>@(prod.Price * prod.Quantity)</td>
+                    <td>@(
+                    prod.Price * prod.Quantity
+                    )</td>
                 </tr>
-            }
+                TotalPrice = TotalPrice + (prod.Price * prod.Quantity);
+        }
+        }
         </tbody>
     </table>
+    <div>Total Price: @TotalPrice</div>
+    <button class="btn btn-lg btn-success" @onclick='() => Nav.NavigateTo("/checkout")'> Checkout</button>
 }
 
 @code {
 
     public List<Cart> shopCart { get; set; }
+    private float TotalPrice { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

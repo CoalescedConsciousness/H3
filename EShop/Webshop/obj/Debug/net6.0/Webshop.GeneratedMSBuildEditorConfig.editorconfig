@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Santiak\Desktop\EUC\h3\EShop\Webshop
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,10 +47,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -61,6 +61,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/_Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Santiak/Desktop/EUC/h3/EShop/Webshop/Pages/_Product.cshtml]

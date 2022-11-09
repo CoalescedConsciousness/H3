@@ -14,18 +14,24 @@ namespace Webshop.Data
         {
         }
 
-        public DbSet<Webshop.DAL.Models.Product> Product { get; set; } = default!;
-    
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Product>().HasData(
-                new Product()
-                {
-                    Id = 1,
-                    Name = "Test Product",
-                    Price = 10,
-                    IsActive = true,
-                }); 
+            int pCount = 10;
+            for (int i = 1; i < pCount; i++)
+            {
+                builder.Entity<Product>().HasData(
+
+                    new Product()
+                    {
+                        Id = i,
+                        Name = $"Test Product {i}",
+                        Price = i * 10,
+                        IsActive = true,
+                    });
+            }
         }
     }
 }

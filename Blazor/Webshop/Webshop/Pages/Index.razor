@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject HttpClient cl
+@inject NavigationManager Nav
 <div class="row">
     @if (Products != null)
     {
@@ -11,6 +12,8 @@
         }
     }
 </div>
+
+
 
 
 @code{
