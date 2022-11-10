@@ -16,9 +16,10 @@ namespace Webshop.Controllers
         {
             _context = context;
         }
+
         [HttpPost]
-        [Route("create")]
-        public async Task<IActionResult> CreateProduct(Customer customer)
+        //[Route("create")]
+        public async Task<IActionResult> CreateCustomer(Customer customer)
         {
             await _context.CreateAsync(customer);
 

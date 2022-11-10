@@ -5,17 +5,34 @@
 <h3>Checkout</h3>
 
 <EditForm Model="customer" OnValidSubmit="@ProcessCart">
-    <row>
-    <label for="name">Name:</label>
-    <InputText id="name" @bind-Value="customer.FName"/>
-    </row>
-    <row>
-    <label for="surname">Surname:</label>
-    <InputText id="surname" @bind-Value="customer.LName"/>
-    </row>
-    <label for="mail">E-Mail:</label>
-    <InputText id="mail" @bind-Value="customer.Mail"/>
-
+    <div>
+        <label for="name">Name:</label>
+        <InputText id="name" @bind-Value="customer.FName"/>
+    </div>
+    <div>
+        <label for="surname">Surname:</label>
+        <InputText id="surname" @bind-Value="customer.LName"/>
+    </div>
+    <div>
+        <label for="mail">E-Mail:</label>
+        <InputText id="mail" @bind-Value="customer.Mail"/>
+    </div>
+    <div>
+        <label for="country">Country:</label>
+        <InputText id="country" @bind-Value="customer.Country"/>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <InputText id="city" @bind-Value="customer.City"/>
+    </div>
+    <div>
+        <label for="zip">Zip:</label>
+        <InputNumber id="zip" @bind-Value="customer.Zip"/>
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <InputText id="address" @bind-Value="customer.Address"/>
+    </div>
     <button type="submit">Process</button>
 </EditForm>
 
@@ -27,7 +44,6 @@
         Order newOrder = new();
         string cartStr = await ls.GetItemAsStringAsync("Cart");
         List<Cart> cart = cartStr.ToCartModels();
-
         newOrder.Products = cart.Select(x => new Product()
 			{
 				Id = x.Id,
@@ -62,11 +78,10 @@
                 partner = await cl.GetFromJsonAsync<Customer>($"/api/Customer/email/{customer.Mail}");
             }
         }
-
+        newOrder.Customer = partner;
         newOrder.CustomerId = partner.Id;
-
-        var result = await cl.PostAsJsonAsync<Order>("/api/Order", newOrder);
-
+        newOrder.Total = 100;
+        var result = await cl.PostAsJsonAsync<Order>("/api/Order",newOrder);
 		
 	}
 	protected override async Task OnInitializedAsync()
