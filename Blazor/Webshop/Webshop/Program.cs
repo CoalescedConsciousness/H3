@@ -27,11 +27,20 @@ builder.Services.AddHttpClient();
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false)
                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 var baseAddress = "https://localhost:7290/";
-builder.Services.AddScoped(sp =>
+builder.Services.AddHttpClient("localapi", client =>
 {
-    var client = new HttpClient();
     client.BaseAddress = new Uri(baseAddress);
-    return client;
+});
+
+builder.Services.AddHttpClient("DAWA", client =>
+{
+    client.BaseAddress = new Uri("https://api.dataforsyningen.dk");
+});
+
+//bagud compatibilitet med Httpclient
+builder.Services.AddScoped<HttpClient>(sp => {
+    IHttpClientFactory factory = sp.GetRequiredService<IHttpClientFactory>();
+    return factory.CreateClient("localapi");
 });
 #endregion
 #region app

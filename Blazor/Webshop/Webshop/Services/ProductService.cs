@@ -15,7 +15,6 @@ namespace Webshop.Services
 
         public async Task CreateAsync(Product product)
         {
-            Console.WriteLine(product.Id);
             _context.Add(product);
             await _context.SaveChangesAsync();
         }

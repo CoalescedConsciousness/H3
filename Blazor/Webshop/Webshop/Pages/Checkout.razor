@@ -1,6 +1,7 @@
 ﻿@page "/checkout"
 @inject ILocalStorageService ls
 @inject HttpClient cl
+@inject IHttpClientFactory clFactory
 @inject NavigationManager Nav
 <h3>Checkout</h3>
 
@@ -23,11 +24,11 @@
     </div>
     <div>
         <label for="city">City:</label>
-        <InputText id="city" @bind-Value="customer.City"/>
+        <InputText id="city" @bind-Value="city"/>
     </div>
     <div>
         <label for="zip">Zip:</label>
-        <InputNumber id="zip" @bind-Value="customer.Zip"/>
+        <InputText id="zip" @oninput="FindCityByZip" @bind-Value="customer.Zip"/>
     </div>
     <div>
         <label for="address">Address:</label>
@@ -37,8 +38,49 @@
 </EditForm>
 
 @code {
+    [CascadingParameter]
+    MainLayout MainLayout { get; set; }
     public Customer customer = new();
     public Order o = new();
+    private string city { get; set; }
+    private string zipcode { get; set; }
+
+
+    async Task FindCityByZip(ChangeEventArgs e)
+    {
+        HttpClient adrClient = clFactory.CreateClient("DAWA");
+        try
+        {
+            var res = await adrClient.GetFromJsonAsync<Address[]>($"/adresser?postnr={e.Value}&per_side=1&side=1&struktur=mini");
+
+            if (res != null)
+            {
+                if (res.Length != 0)
+                {
+                    var r = res.FirstOrDefault();
+                    city = r.Postnrnavn;
+                    StateHasChanged();
+                }
+                else
+                {
+                    city = "";
+                }
+            }
+            else
+            {
+                city = "";
+            }
+        }
+        catch (Exception err)
+        {
+            city = "";
+            // ErrorMsg = err.Message;
+        }
+
+
+        
+    }
+
     public async Task ProcessCart()
     {
         Order newOrder = new();

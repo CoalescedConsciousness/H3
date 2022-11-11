@@ -1,4 +1,6 @@
-﻿using Webshop.DAL.Models;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using Webshop.DAL.Models;
 using Webshop.Data;
 using Webshop.DTO;
 
@@ -15,6 +17,7 @@ namespace Webshop.Services
 
         public async Task CreateAsync(OrderDto order)
         {
+            
             Order realOrder = new()
             {
                 CustomerId = order.CustomerId,

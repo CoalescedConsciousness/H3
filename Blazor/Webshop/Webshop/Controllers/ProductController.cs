@@ -26,7 +26,6 @@ namespace Webshop.Controllers
         [Route("all")]
         public async Task<List<Product>> GetProducts()
         {
-            Console.WriteLine("TESTER");
             return await _context.GetAllAsync();
         }
         
