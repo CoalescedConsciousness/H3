@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Cvm8JeYHrVHHRU/4EmciPM/FVFl/ZdhCgr9fEomo2jgQbP7/IqU2ur//5beDKWBywNC3P4O+wpuB+8YQJ3lbKg==",
+  "dgSpecHash": "L6IOEsSAUa7Yoy3fnsq38Ir484HELUcHzQGcl8STLK8EWD3qAGuJJ1BOwYSU49AOesanWHmmgf3rgrLb03/ZfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Santiak\\Desktop\\EUC\\h3\\Blazor\\Webshop\\Webshop\\Webshop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Santiak\\.nuget\\packages\\blazored.localstorage\\4.2.0\\blazored.localstorage.4.2.0.nupkg.sha512",
+    "C:\\Users\\Santiak\\.nuget\\packages\\blazored.toast\\3.2.2\\blazored.toast.3.2.2.nupkg.sha512",
     "C:\\Users\\Santiak\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Santiak\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Santiak\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

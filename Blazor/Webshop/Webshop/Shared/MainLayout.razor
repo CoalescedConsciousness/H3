@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager Nav
 @inject ILocalStorageService ls
+@using Blazored.Toast.Configuration
 
 <PageTitle>Webshop</PageTitle>
 
@@ -21,6 +22,13 @@
             </CascadingValue>
         </article>
     </main>
+    <BlazoredToasts Position="ToastPosition.BottomRight"
+                        Timeout="5"
+                        IconType="IconType.FontAwesome"
+                        ErrorIcon="fas fa-times-circle"
+                        InfoIcon="fas fa-info"
+                        SuccessIcon="fas fa-check"
+                        WarningIcon="fas fa-exclamation-triangle" />
 </div>
 
 @code {

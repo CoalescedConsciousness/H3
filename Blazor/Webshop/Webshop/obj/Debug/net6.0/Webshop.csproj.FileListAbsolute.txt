@@ -270,3 +270,4 @@ C:\Users\Santiak\Desktop\EUC\h3\Blazor\Webshop\Webshop\bin\Debug\net6.0\Microsof
 C:\Users\Santiak\Desktop\EUC\h3\Blazor\Webshop\Webshop\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Santiak\Desktop\EUC\h3\Blazor\Webshop\Webshop\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\Users\Santiak\Desktop\EUC\h3\Blazor\Webshop\Webshop\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Santiak\Desktop\EUC\h3\Blazor\Webshop\Webshop\bin\Debug\net6.0\Blazored.Toast.dll

@@ -3,6 +3,7 @@
 @inject HttpClient cl
 @inject IHttpClientFactory clFactory
 @inject NavigationManager Nav
+@inject IToastService ts
 <h3>Checkout</h3>
 
 <EditForm Model="customer" OnValidSubmit="@ProcessCart">
@@ -78,11 +79,12 @@
         }
 
 
-        
+
     }
 
     public async Task ProcessCart()
     {
+        float totalCost = 0;
         Order newOrder = new();
         string cartStr = await ls.GetItemAsStringAsync("Cart");
         List<Cart> cart = cartStr.ToCartModels();
@@ -93,7 +95,10 @@
 				Price = x.Price,
 
 			}).ToList();
-
+        foreach (Product p in newOrder.Products)
+        {
+            totalCost += p.Price;
+        }
         Customer partner = null;
 
         try
@@ -122,8 +127,9 @@
         }
         newOrder.Customer = partner;
         newOrder.CustomerId = partner.Id;
-        newOrder.Total = 100;
+        newOrder.Total = totalCost;
         var result = await cl.PostAsJsonAsync<Order>("/api/Order",newOrder);
+        ts.ShowSuccess($"Order for {partner.FName} {partner.LName} amouting to {newOrder.Total} completed.");
 		
 	}
 	protected override async Task OnInitializedAsync()

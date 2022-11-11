@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Webshop.Data;
+﻿using Webshop.Data;
 using Webshop.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Webshop.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Blazored.LocalStorage;
-using Webshop;
+using Blazored.Toast;
 
 #region builder
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +19,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddBlazoredToast();
 builder.Services.AddHttpClient();
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false)
                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
