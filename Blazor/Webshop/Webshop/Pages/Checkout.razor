@@ -129,7 +129,9 @@
         newOrder.CustomerId = partner.Id;
         newOrder.Total = totalCost;
         var result = await cl.PostAsJsonAsync<Order>("/api/Order",newOrder);
-        ts.ShowSuccess($"Order for {partner.FName} {partner.LName} amouting to {newOrder.Total} completed.");
+        await ls.SetItemAsStringAsync("Cart", "");
+        await OnInitializedAsync();
+        ts.ShowSuccess($"Order for {partner.FName} {partner.LName} amounting to {newOrder.Total} completed.");
 		
 	}
 	protected override async Task OnInitializedAsync()
