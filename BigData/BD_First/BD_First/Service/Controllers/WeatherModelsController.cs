@@ -28,24 +28,24 @@ namespace BD_First.Service.Controllers
         public async Task<ActionResult<IEnumerable<WeatherModel>>> GetWeatherModel()
         {
             WeatherService weatherService = new WeatherService(_context, _httpClientFactory);
-            var res = await weatherService.GetWeatherAsync();
-            Console.WriteLine(res);
-            Console.WriteLine("WAHEY");
+            var res = await weatherService.GetWeatherAsync(false);
             return await _context.WeatherModel.ToListAsync();
         }
 
         // GET: api/WeatherModels/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<WeatherModel>> GetWeatherModel(int id)
+        [HttpGet("{loops}")]
+        public async Task GetWeatherModel(int loops)
         {
-            var weatherModel = await _context.WeatherModel.FindAsync(id);
+            WeatherService weatherService = new WeatherService(_context, _httpClientFactory);
 
-            if (weatherModel == null)
+            int x = 0;
+            while (x < loops)
             {
-                return NotFound();
+                var res = await weatherService.GetWeatherAsync(true);
+                Thread.Sleep(TimeSpan.FromHours(1));
+                Console.WriteLine(x);
+                x++;
             }
-
-            return weatherModel;
         }
 
         // PUT: api/WeatherModels/5

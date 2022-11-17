@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using BD_First.Data;
 using BD_First.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Spark.Sql;
 
 var builder = WebApplication.CreateBuilder(args);
 var baseAddress = "https://localhost:7292/";
@@ -28,6 +29,7 @@ builder.Services.AddScoped<HttpClient>(sp => {
     IHttpClientFactory factory = sp.GetRequiredService<IHttpClientFactory>();
     return factory.CreateClient("localapi");
 });
+
 #endregion
 #region App
 
