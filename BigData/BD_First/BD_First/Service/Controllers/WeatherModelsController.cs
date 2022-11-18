@@ -23,6 +23,10 @@ namespace BD_First.Service.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
+        /// <summary>
+        /// Returns a single snapshot dataset
+        /// </summary>
+        /// <returns></returns>
         // GET: api/WeatherModels
         [HttpGet]
         public async Task<ActionResult<IEnumerable<WeatherModel>>> GetWeatherModel()
@@ -32,6 +36,11 @@ namespace BD_First.Service.Controllers
             return await _context.WeatherModel.ToListAsync();
         }
 
+        /// <summary>
+        /// Returns a number of datasets equal to the parameter (integer) given, spaced 1 hour apart.
+        /// </summary>
+        /// <param name="loops"></param>
+        /// <returns></returns>
         // GET: api/WeatherModels/5
         [HttpGet("{loops}")]
         public async Task GetWeatherModel(int loops)
@@ -48,6 +57,10 @@ namespace BD_First.Service.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a continuous stream of datasets, for as long as the application runs.
+        /// </summary>
+        /// <returns></returns>
         // GET: api/WeatherModels/continuous
         [HttpGet]
         [Route("continuous")]
@@ -59,9 +72,18 @@ namespace BD_First.Service.Controllers
             {
                 Console.WriteLine($"Loop #{x}");
                 var res = await ws.GetWeatherAsync(true);
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                Thread.Sleep(TimeSpan.FromHours(1));
                 x++;
             }
+        }
+
+        // GET: api/WeatherModels/map
+        [HttpGet]
+        [Route("map")]
+        public async Task GetDataByDate()
+        {
+            WeatherService ws = new WeatherService(_context, _httpClientFactory);
+            ws.PerDateCount();
         }
     }
 }

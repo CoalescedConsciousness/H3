@@ -1,5 +1,5 @@
 ﻿# Weatherdata Big Data API
-### Version: *1.0.0*
+### Version: *1.0.1*
 ### Author: *Mads Søndergaard*
 ### Supervisor: *Christian Thygesen*
 ### Org: *EUC Syd*
@@ -26,3 +26,9 @@
 ---
 ## Known issues:
 - Spark implementation is currently incomplete, but is otherwise also unnecessary at the current stage. Code is thus present but commented out for the time being.
+
+---
+---
+## Changelog:
+### 1.0.1.:
+- Added example of Data Query Layer; simple extraction and aggregation of datasets based on Date property using LINQ.

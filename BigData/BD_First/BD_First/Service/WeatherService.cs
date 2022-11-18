@@ -92,6 +92,19 @@ namespace BD_First.Service
 
         // Not implemented:
         #region (5) Data Query Layer
+        public Task PerDateCount()
+        {
+
+            var x = _ctx.IngestModel.GroupBy(w => w.Date)
+                .Select(intermediate => new
+                {
+                    Date = intermediate.Key,
+                    Frequency = intermediate.Sum(w => 1)
+                })
+                .OrderBy(x => x.Date).ToList();
+            
+            return null;
+        }
         #endregion
         #region (6) Data Visualization Layer
         #endregion
