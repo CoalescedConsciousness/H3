@@ -20,7 +20,7 @@ namespace BD_First.Service.Controllers
         public WeatherModelsController(BD_FirstContext context, IHttpClientFactory httpClientFactory)
         {
             _context = context;
-            _httpClientFactory = httpClientFactory; 
+            _httpClientFactory = httpClientFactory;
         }
 
         // GET: api/WeatherModels
@@ -48,67 +48,20 @@ namespace BD_First.Service.Controllers
             }
         }
 
-        // PUT: api/WeatherModels/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutWeatherModel(int id, WeatherModel weatherModel)
+        // GET: api/WeatherModels/continuous
+        [HttpGet]
+        [Route("continuous")]
+        public async Task GetWeatherModelContinuous()
         {
-            if (id != weatherModel.Id)
+            int x = 1;
+            WeatherService ws = new WeatherService(_context, _httpClientFactory);
+            while (true)
             {
-                return BadRequest();
+                Console.WriteLine($"Loop #{x}");
+                var res = await ws.GetWeatherAsync(true);
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                x++;
             }
-
-            _context.Entry(weatherModel).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!WeatherModelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/WeatherModels
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<WeatherModel>> PostWeatherModel(WeatherModel weatherModel)
-        {
-            _context.WeatherModel.Add(weatherModel);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetWeatherModel", new { id = weatherModel.Id }, weatherModel);
-        }
-
-        // DELETE: api/WeatherModels/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteWeatherModel(int id)
-        {
-            var weatherModel = await _context.WeatherModel.FindAsync(id);
-            if (weatherModel == null)
-            {
-                return NotFound();
-            }
-
-            _context.WeatherModel.Remove(weatherModel);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool WeatherModelExists(int id)
-        {
-            return _context.WeatherModel.Any(e => e.Id == id);
         }
     }
 }
