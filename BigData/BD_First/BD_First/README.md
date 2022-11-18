@@ -1,7 +1,7 @@
 ﻿# Weatherdata Big Data API
-### Supervisor: *Christian Thygesen*
-### Version: 1.0.0
+### Version: *1.0.0*
 ### Author: *Mads Søndergaard*
+### Supervisor: *Christian Thygesen*
 ### Org: *EUC Syd*
 
 ---
