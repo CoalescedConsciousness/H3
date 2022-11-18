@@ -1,8 +1,9 @@
 ﻿# Weatherdata Big Data API
-### Author: Mads Søndergaard
-### Org: EUC Syd
-### Supervisor: Christian Thygesen
+### Supervisor: *Christian Thygesen*
 ### Version: 1.0.0
+### Author: *Mads Søndergaard*
+### Org: *EUC Syd*
+
 ---
 ## Functionality:
 ### Harvest data from DMI (Danish Meteorological Institute) for the region of Sorø, using WebAPI calls (Service/Controllers/WeatherModelsController.cs)
