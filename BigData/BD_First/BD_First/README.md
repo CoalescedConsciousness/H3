@@ -16,7 +16,7 @@
 - string Data (JSON)
 - DateTime Date (the upper boundary of the hourly measurement returned, i.e. the latter of "1/1/2022 18:00 to 1/1/2022 19:00")
 - bool UsingTimer (indicates whether the dataset was a snapshot or part of a series of datasets)
-:exclamation: Note that the Data property remains fully intact; the Date property is only extracted at this stage to facilitate local recursive execution of the program.
+- :exclamation: Note that the Data property remains fully intact; the Date property is only extracted at this stage to facilitate local recursive execution of the program.
 
 ### The resulting IngestModel objects are subsequently stored in a localised SQL database (Data/BD_FirstContext.cs).
 ---
