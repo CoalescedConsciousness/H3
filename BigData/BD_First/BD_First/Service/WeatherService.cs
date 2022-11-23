@@ -8,7 +8,7 @@ using BD_First.Data;
 using System.Drawing.Text;
 using System.Globalization;
 using Microsoft.Spark.Sql;
-
+using Microsoft.Spark;
 
 namespace BD_First.Service
 {
@@ -36,9 +36,7 @@ namespace BD_First.Service
             const string Municipality = "0340";
             const string Timespan = "hour";
             JsonObject res;
-            //var test = await cl.GetFromJsonAsync
-            //datetime=2022-11-15T06:00:00.00Z
-           
+          
             if (_firstRun)
             { 
                 res = await cl.GetFromJsonAsync<JsonObject>($"/v2/climateData/collections/municipalityValue/items?timeResolution={Timespan}&municipalityId={Municipality}&api-key={ApiKey}");
@@ -66,11 +64,11 @@ namespace BD_First.Service
 
             // Convert gotten data to UTC 3339 Compliant format (needed for API call in GetWeatherAsync else clause):
             _runTime = _runDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss") + "%2B02:00";
-            //SparkSession spark = SparkSession.Builder()
-            //                    .AppName("weather")
-            //                    .GetOrCreate();
+            SparkSession spark = SparkSession.Builder()
+                                .AppName("weather")
+                                .GetOrCreate();
 
-            //DataFrame df = spark.Read().Json(jObj.ToString());
+            DataFrame df = spark.Read().Json(jObt.ToString());
 
             #endregion
             #region (4) Data Storage Layer
@@ -80,7 +78,7 @@ namespace BD_First.Service
                 _ctx.Add(new IngestModel()
                 {
                     Data = y.ToString(),
-                    Date = _runDateTime,
+                    Date = DateTime.Parse((string)y["properties"]["to"], CultureInfo.InvariantCulture),
                     UsingTimer = timer,
                 });
             }
@@ -88,10 +86,11 @@ namespace BD_First.Service
 
         }
         #endregion
-
-
-        // Not implemented:
         #region (5) Data Query Layer
+        /// <summary>
+        /// Aggregates the number of entries based on the time of the measurement (i.e. Date property).
+        /// </summary>
+        /// <returns></returns>
         public Task PerDateCount()
         {
 
@@ -102,10 +101,57 @@ namespace BD_First.Service
                     Frequency = intermediate.Sum(w => 1)
                 })
                 .OrderBy(x => x.Date).ToList();
+            foreach (var y in x)
+            {
+                Console.WriteLine(y);
+            }
             
             return null;
         }
         #endregion
+
+        public Task GetWindData()
+        {
+            var z = _ctx.IngestModel.Where(x => x.Data.Contains("wind"))
+                .Select(i => new
+                {
+                    Date = i.Date,
+                    Data = i.Data,
+                })
+                .GroupBy(r => r.Date)
+                //.OrderBy(x => x.Date)
+                .ToList();
+                
+            
+
+            //foreach (var a in z)
+            //{
+            //    foreach (var b in a)
+            //    {
+                   
+            //    }
+            //    JObject obj = JObject.Parse();
+            //    var key = obj["properties"]["parameterId"];
+            //    var value = obj["properties"]["value"];
+            //    var time = obj["properties"]["created"];
+            //    var coords = obj["geometry"]["coordinates"].ToList();
+            //    Console.WriteLine(a.Data);
+            //    Console.WriteLine(time);
+            //    Console.WriteLine(a.Date);
+            //    Console.WriteLine("###");
+            //    //_ctx.Add(new WeatherModel()
+            //    //{
+            //    //    Latitude = (float)coords[0],
+            //    //    Longitude = (float)coords[1],
+            //    //    Timestamp = DateTime.Parse((string)obj["features"][0]["properties"]["to"], CultureInfo.InvariantCulture),
+
+            //    //});
+
+            //}
+            return null;
+        }
+
+        // Not implemented yet:
         #region (6) Data Visualization Layer
         #endregion
     }

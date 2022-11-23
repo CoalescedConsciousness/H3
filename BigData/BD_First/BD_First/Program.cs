@@ -12,6 +12,7 @@ var baseAddress = "https://localhost:7292/";
 // Add DB and Services
 builder.Services.AddDbContext<BD_FirstContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BD_FirstContext") ?? throw new InvalidOperationException("Connection string 'BD_FirstContext' not found.")));
+
 builder.Services.AddScoped<WeatherService>();
 
 // Enable use of Endpoints for WebAPI calls
@@ -38,7 +39,6 @@ builder.Services.AddScoped<HttpClient>(sp => {
 #region App
 
 var app = builder.Build();
-
 // Add support for Routing used for API call functionality.
 app.UseRouting();
 app.UseMvcWithDefaultRoute();

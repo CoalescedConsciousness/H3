@@ -1,0 +1,44 @@
+Example Dataset:
+{
+  "geometry": {
+    "coordinates": [
+      11.55925134,
+      55.5248405
+    ],
+    "type": "Point"
+  },
+  "id": "02a747fe-5390-52fa-8088-1c0dbed58ad5",
+  "type": "Feature",
+  "properties": {
+    "calculatedAt": "2022-11-17T17:52:35.167",
+    "created": "2022-11-17T18:52:43.43345+01:00",
+    "from": "2022-11-17T17:00:00+01:00",
+    "municipalityId": "0340",
+    "municipalityName": "Sorø",
+    "parameterId": "max_wind_speed_3sec",
+    "qcStatus": "none",
+    "timeResolution": "hour",
+    "to": "2022-11-17T18:00:00+01:00",
+    "value": 15.4
+  }
+}
+
+Properties:
+Longtitude; Coordinates (long) - (float)
+Latitude; Coordinates (lat) - (float)
+Time; CalculatedAt - (DateTime)
+WindspeedMean (float)
+WindspeedMax10 (float)
+WindspeedDirection (string) 
+
+Explanation:
+Using these data, we will be able to store all relevant climate measurements taken, and then subsequently coalesce equivalent measurements (i.e. "Windspeed only").
+Coordinates are sub-divided for granularity and comparison purposes (in case we want to compare measurements irrespective of socio-political geography; minimal loss in data integrity.
+Time of measurements is kept in its entirety, but have excluded the calculated "from" and "to" DateTime measurements, as these are constructs, and basing data entries on these could potentially lead to corrupted datapoints.
+
+We use the measurements where Time, Longtitude, and Latitude er equivalent, and out of these datasets, we aggregate the datapoints where the key (parameterId) are either mean_wind_speed, max_wind_speed_10min, or mean_wind_dir, and store their value (Value) in the relevant property above.
+This should tell us something about the safety of crossing a bridge; i.e. whether the wind is far too strong (WindspeedMean > 15), necessitates warning drivers (WindspeedMax10 > 15). Furthermore, we take note of the directionality, as certain wind directions (i.e. along the bridge) are less severe than cross-wind gusts, so as to avoid false alarms.
+As this Data warehouse is concerned with bridge-safety specifically, we opt out of measuring rainfall and temperature, as these are concerns that do not uniquely apply to crossing a bridge. As such we assume that said data has already been relevant for the driver before crossing the bridge. Wind can of course be a concern for mainland as well, but not on a moment-to-moment basis as on a bridge and the infrastructure surrounding it. 
+
+Task 1 (Bridge safety):
+Determine, using datasets regarding windspeed and direction, whether or not wind conditions near Storebæltsbroen constitue a potential hazard for certain vehicle. With the intent of issuing relevant warnings if and when necessary (i.e. during strong (>15m/s) cross-winds, both gusts and sustained).

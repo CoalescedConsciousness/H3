@@ -83,7 +83,8 @@ namespace BD_First.Service.Controllers
         public async Task GetDataByDate()
         {
             WeatherService ws = new WeatherService(_context, _httpClientFactory);
-            ws.PerDateCount();
+            //ws.PerDateCount();
+            ws.GetWindData();
         }
     }
 }

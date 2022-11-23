@@ -4,6 +4,7 @@ using BD_First.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BDFirst.Migrations
 {
     [DbContext(typeof(BD_FirstContext))]
-    partial class BDFirstContextModelSnapshot : ModelSnapshot
+    [Migration("20221122130324_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,6 +40,9 @@ namespace BDFirst.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("UsingTimer")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("IngestModel");
@@ -50,27 +56,23 @@ namespace BDFirst.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Radiation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Station")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sunshine")
+                    b.Property<string>("WindDir")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WindSpeedDirection")
+                    b.Property<string>("WindMax10")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WindSpeedTenMinute")
+                    b.Property<string>("WindMax3")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WindSpeedThreeMinute")
+                    b.Property<string>("WindMean")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
