@@ -108,6 +108,7 @@ namespace BD_First.Service
         }
         #endregion
 
+        #region Extract & Transform
         public Task GetWindData()
         {
             var z = _ctx.IngestModel.Where(x => x.Data.Contains("wind"))
@@ -129,7 +130,6 @@ namespace BD_First.Service
                 wm.WindMax10 = 0;
                 wm.WindDir = 0;
                 wm.WindMean = 0;
-                Console.WriteLine("GMRKEGNAERKPGNPAEGNRAEIANPGNAEROGPENGEOGNEAPOGNEOGNEAPG");
                 foreach (var b in a)
                 {
 
@@ -168,9 +168,11 @@ namespace BD_First.Service
             }
             return null;
         }
+        #endregion
 
         // Not implemented yet:
         #region (6) Data Visualization Layer
+        // This is carried out via Metabase, using SQLite database (potentially Spark) to get data to the container.
         #endregion
     }
 }

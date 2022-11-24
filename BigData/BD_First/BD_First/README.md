@@ -1,5 +1,5 @@
 ﻿# Weatherdata Big Data API
-### Version: *1.0.1*
+### Version: *1.1.0*
 ### Author: *Mads Søndergaard*
 ### Supervisor: *Christian Thygesen*
 ### Org: *EUC Syd*
@@ -10,6 +10,7 @@
 - /api/WeatherModels fetches a single snapshot dataset using current datetime
 - /api/WeatherModels/{int} fetches a number of datasets equal to the number supplied in the URI, spaced 1 hour apart
 - /api/WeatherModels/continuous fetches datasets continuously for as long as the program is running.
+- /api/WeatherModels/map processes data
 
 ### Data is ingested into the IngestModel class, with minimal polishing of said data (Service/WeatherService.cs):
 - int ID
@@ -21,14 +22,22 @@
 ### The resulting IngestModel objects are subsequently stored in a localised SQL database (Data/BD_FirstContext.cs).
 ---
 ## ToDo
-- Add greater granular resolution of data, i.e. parse IngestModel objects to more useful WeatherModel objects (template for latter already exists, but tentatively).
-- Add visualization of resulting aggregated and scrubbed data.
+- Move certain sensitive information into configuration file.
+
 ---
 ## Known issues:
-- Spark implementation is currently incomplete, but is otherwise also unnecessary at the current stage. Code is thus present but commented out for the time being.
+- Spark not fully operationally; final obstacle appears to be network access based rather than programmatical in nature.
 
 ---
 ---
 ## Changelog:
+### 1.1.0 (Breaking Change):
+- Added LTE-method for processing stored (Datalake) data into more comprehensible structured (Warehouse) data
+- (BREAKING) No longer uses local SQL; uses (1) a primitive SQLite Database which requires manual integration with (2) Metabase (Docked). Note that Spark is mostly integrated.
+- Data is extracted and transformed in WeatherService.cs
+- Visualization and Dashboarding is carried out via Metabase
+
+
 ### 1.0.1.:
 - Added example of Data Query Layer; simple extraction and aggregation of datasets based on Date property using LINQ.
+
