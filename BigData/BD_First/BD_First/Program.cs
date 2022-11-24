@@ -4,15 +4,34 @@ using BD_First.Data;
 using BD_First.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Spark.Sql;
+using Microsoft.Spark;
+using Microsoft.Spark.Interop;
+using Microsoft.Spark.Sql.Types;
+using System.Net.Sockets;
 
 var builder = WebApplication.CreateBuilder(args);
 var baseAddress = "https://localhost:7292/";
 
+// MOVE THESE TO CONF FILE!
+#region Configure SQLite
+var cString = builder.Configuration.GetConnectionString("WeatherData") ?? "Data Source=WeatherData.db";
+// !! Remember to transfer db file to Container:
+//> docker cp "C:\Users\Santiak\Desktop\EUC\h3\BigData - Kopi\BD_First\BD_First\WeatherData.db" 2603ad0bab34f611714a2cf774429034eddd12a6dd741429b20fe91c70dd694b:data.db"
+#endregion
+#region Configure Spark
+// Configure Spark
+// -- Nearly working; connection times out between Spark and Metabase, maybe firewall?
+//SparkSession spark = SparkSession.Builder()
+//                                .AppName("weather")
+//                                .GetOrCreate();
+
+//DataFrame df = spark.Read().Json(@"c:\bin\data.json");
+#endregion
 #region Builder
 // Add DB and Services
-builder.Services.AddDbContext<BD_FirstContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BD_FirstContext") ?? throw new InvalidOperationException("Connection string 'BD_FirstContext' not found.")));
-
+//builder.Services.AddDbContext<BD_FirstContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("BD_FirstContext") ?? throw new InvalidOperationException("Connection string 'BD_FirstContext' not found.")));
+builder.Services.AddSqlite<BD_FirstContext>(cString);
 builder.Services.AddScoped<WeatherService>();
 
 // Enable use of Endpoints for WebAPI calls

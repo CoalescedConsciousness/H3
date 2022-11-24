@@ -10,9 +10,9 @@
         public float Latitude { get; set; }
         public float Longitude { get; set; } 
         public DateTime Timestamp { get; set; }
-        public string WindMean { get; set; }
-        public string WindDir { get; set; }
-        public string WindMax10 { get; set; }
-        public string WindMax3 { get; set; }
+        public float WindMean { get; set; }
+        public float WindDir { get; set; }
+        public float WindMax10 { get; set; }
+        public float WindMax3 { get; set; }
     }
 }

@@ -9,6 +9,8 @@ using System.Drawing.Text;
 using System.Globalization;
 using Microsoft.Spark.Sql;
 using Microsoft.Spark;
+using Newtonsoft.Json;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BD_First.Service
 {
@@ -58,17 +60,13 @@ namespace BD_First.Service
         private async Task ParseWeatherData(JsonObject jObj, bool timer)
         {
             JObject jObt = JObject.Parse(jObj.ToString());
-
+            
             // Get "To" as DateTime for DB field to avoid future scrubbing when getting later data:
             _runDateTime = DateTime.Parse((string)jObt["features"][0]["properties"]["to"], CultureInfo.InvariantCulture);
 
             // Convert gotten data to UTC 3339 Compliant format (needed for API call in GetWeatherAsync else clause):
             _runTime = _runDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss") + "%2B02:00";
-            SparkSession spark = SparkSession.Builder()
-                                .AppName("weather")
-                                .GetOrCreate();
-
-            DataFrame df = spark.Read().Json(jObt.ToString());
+            
 
             #endregion
             #region (4) Data Storage Layer
@@ -121,33 +119,53 @@ namespace BD_First.Service
                 .GroupBy(r => r.Date)
                 //.OrderBy(x => x.Date)
                 .ToList();
+
+
+
+            foreach (var a in z)
+            {
+                WeatherModel wm = new WeatherModel();
+                wm.WindMax3 = 0;
+                wm.WindMax10 = 0;
+                wm.WindDir = 0;
+                wm.WindMean = 0;
+                Console.WriteLine("GMRKEGNAERKPGNPAEGNRAEIANPGNAEROGPENGEOGNEAPOGNEOGNEAPG");
+                foreach (var b in a)
+                {
+
+
+                    JObject obj = JObject.Parse(b.Data);
+                    var coords = obj["geometry"]["coordinates"].ToList();
+                    var value = (float)obj["properties"]["value"];
+                    
+                    wm.Timestamp = DateTime.Parse((string)obj["properties"]["to"], CultureInfo.InvariantCulture);
+                    wm.Latitude = (float)coords[0];
+                    wm.Longitude = (float)coords[1];
+
+                    if (b.Data.Contains("max_wind_speed_3sec"))
+                    {
+                        wm.WindMax3 = value;
+                    }
+                    else if (b.Data.Contains("mean_wind_dir"))
+                    {
+                        wm.WindDir = value;
+                    }
+                    else if (b.Data.Contains("mean_wind_speed"))
+                    {
+                        wm.WindMean = value;
+                    }
+                    else if (b.Data.Contains("max_wind_speed_10min"))
+                    {
+                        wm.WindMax10 = value;
+                    }
+
+                }
                 
-            
-
-            //foreach (var a in z)
-            //{
-            //    foreach (var b in a)
-            //    {
-                   
-            //    }
-            //    JObject obj = JObject.Parse();
-            //    var key = obj["properties"]["parameterId"];
-            //    var value = obj["properties"]["value"];
-            //    var time = obj["properties"]["created"];
-            //    var coords = obj["geometry"]["coordinates"].ToList();
-            //    Console.WriteLine(a.Data);
-            //    Console.WriteLine(time);
-            //    Console.WriteLine(a.Date);
-            //    Console.WriteLine("###");
-            //    //_ctx.Add(new WeatherModel()
-            //    //{
-            //    //    Latitude = (float)coords[0],
-            //    //    Longitude = (float)coords[1],
-            //    //    Timestamp = DateTime.Parse((string)obj["features"][0]["properties"]["to"], CultureInfo.InvariantCulture),
-
-            //    //});
-
-            //}
+                
+                _ctx.WeatherModel.Add(wm);
+                _ctx.SaveChanges();
+                
+            }
             return null;
         }
 
