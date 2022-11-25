@@ -10,22 +10,26 @@ using Microsoft.Spark.Sql.Types;
 using System.Net.Sockets;
 
 var builder = WebApplication.CreateBuilder(args);
-var baseAddress = "https://localhost:7292/";
 
-// MOVE THESE TO CONF FILE!
+#region Fetch Configured Settings:
+var baseAddress = builder.Configuration.GetSection("URIs")["local"];
+var targetAddress = builder.Configuration.GetSection("URIs")["target"];
+var sqLiteStore = builder.Configuration.GetSection("FileStores")["sqlite"];
+#endregion
+
 #region Configure SQLite
 var cString = builder.Configuration.GetConnectionString("WeatherData") ?? "Data Source=WeatherData.db";
 // !! Remember to transfer db file to Container:
-//> docker cp "C:\Users\Santiak\Desktop\EUC\h3\BigData - Kopi\BD_First\BD_First\WeatherData.db" 2603ad0bab34f611714a2cf774429034eddd12a6dd741429b20fe91c70dd694b:data.db"
+//> docker cp "C:\Users\Santiak\Desktop\EUC\h3\BigData\BD_First\BD_First\WeatherData.db" 2603ad0bab34f611714a2cf774429034eddd12a6dd741429b20fe91c70dd694b:data.db"
 #endregion
 #region Configure Spark
 // Configure Spark
 // -- Nearly working; connection times out between Spark and Metabase, maybe firewall?
-//SparkSession spark = SparkSession.Builder()
-//                                .AppName("weather")
-//                                .GetOrCreate();
+SparkSession spark = SparkSession.Builder()
+                                .AppName("weather")
+                                .GetOrCreate();
 
-//DataFrame df = spark.Read().Json(@"c:\bin\data.json");
+DataFrame df = spark.Read().Json(@"c:\bin\data.json");
 #endregion
 #region Builder
 // Add DB and Services
@@ -47,7 +51,7 @@ builder.Services.AddHttpClient("localapi", client =>
 
 builder.Services.AddHttpClient("DMI", client =>
 {
-    client.BaseAddress = new Uri("https://dmigw.govcloud.dk");
+    client.BaseAddress = new Uri(targetAddress);
 });
 builder.Services.AddScoped<HttpClient>(sp => {
     IHttpClientFactory factory = sp.GetRequiredService<IHttpClientFactory>();

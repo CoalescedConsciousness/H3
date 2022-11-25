@@ -16,11 +16,13 @@ namespace BD_First.Service.Controllers
     {
         private readonly BD_FirstContext _context;
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
 
-        public WeatherModelsController(BD_FirstContext context, IHttpClientFactory httpClientFactory)
+        public WeatherModelsController(BD_FirstContext context, IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _context = context;
             _httpClientFactory = httpClientFactory;
+            _configuration = configuration; 
         }
 
         /// <summary>

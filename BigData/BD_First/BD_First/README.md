@@ -31,6 +31,8 @@
 ---
 ---
 ## Changelog:
+### 1.1.1
+- Moved configurable variables to settings file (appsettings.json)
 ### 1.1.0 (Breaking Change):
 - Added LTE-method for processing stored (Datalake) data into more comprehensible structured (Warehouse) data
 - (BREAKING) No longer uses local SQL; uses (1) a primitive SQLite Database which requires manual integration with (2) Metabase (Docked). Note that Spark is mostly integrated.

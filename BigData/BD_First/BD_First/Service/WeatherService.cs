@@ -11,6 +11,7 @@ using Microsoft.Spark.Sql;
 using Microsoft.Spark;
 using Newtonsoft.Json;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Configuration;
 
 namespace BD_First.Service
 {
@@ -26,17 +27,23 @@ namespace BD_First.Service
         {
             _ctx = ctx;
             _clFact = clFact;
+          
+
         }
      
         #region (1) Data Ingestion Layer
         public async Task<WeatherModel[]> GetWeatherAsync(bool timer=false)
-        { 
+        {
+        #region Get arguments
+            var conf = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            var ApiKey = conf.GetSection("APIConfig")["APIKey"];
+            var Municipality = conf.GetSection("APIConfig")["Area"];
+            var Timespan = conf.GetSection("APIConfig")["Interval"];
+            #endregion
 
             HttpClient cl = _clFact.CreateClient("DMI");
 
-            const string ApiKey = "ceeaa353-a263-4f66-b29d-9a14a3724a38";
-            const string Municipality = "0340";
-            const string Timespan = "hour";
+           
             JsonObject res;
           
             if (_firstRun)
@@ -170,7 +177,6 @@ namespace BD_First.Service
         }
         #endregion
 
-        // Not implemented yet:
         #region (6) Data Visualization Layer
         // This is carried out via Metabase, using SQLite database (potentially Spark) to get data to the container.
         #endregion
