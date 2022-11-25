@@ -22,8 +22,7 @@
 ### The resulting IngestModel objects are subsequently stored in a localised SQL database (Data/BD_FirstContext.cs).
 ---
 ## ToDo
-- Move certain sensitive information into configuration file.
-
+--
 ---
 ## Known issues:
 - Spark not fully operationally; final obstacle appears to be network access based rather than programmatical in nature.
@@ -33,13 +32,14 @@
 ## Changelog:
 ### 1.1.1
 - Moved configurable variables to settings file (appsettings.json)
+
 ### 1.1.0 (Breaking Change):
 - Added LTE-method for processing stored (Datalake) data into more comprehensible structured (Warehouse) data
 - (BREAKING) No longer uses local SQL; uses (1) a primitive SQLite Database which requires manual integration with (2) Metabase (Docked). Note that Spark is mostly integrated.
 - Data is extracted and transformed in WeatherService.cs
 - Visualization and Dashboarding is carried out via Metabase
 
-
 ### 1.0.1.:
 - Added example of Data Query Layer; simple extraction and aggregation of datasets based on Date property using LINQ.
+
 
