@@ -8,6 +8,7 @@ using Microsoft.Spark;
 using Microsoft.Spark.Interop;
 using Microsoft.Spark.Sql.Types;
 using System.Net.Sockets;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
