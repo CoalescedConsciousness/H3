@@ -1,46 +1,29 @@
 #include "alphabet.h"
-#define PIN_LED 2
+#include "translator.h"
 
 String response;
 
 void setup() 
 {
-  // initialize digital pin LED_BUILTIN as an output.
   pinMode(PIN_LED, OUTPUT);
   Serial.begin(9600);
-
 }
 
-// the loop function runs over and over again forever
 void loop() 
 {
-  //  while(Serial.available()) {
-
-  //   a= Serial.readString();// read the incoming data as string
-
-  //   Serial.println(a); 
-  //  }
-  
   while(Serial.available())
   {
     response = Serial.readString();
     decipherString(response);
-      
-    // s(PIN_LED);
-    // o(PIN_LED);
-    // s(PIN_LED);
-    // delay(2000);
   }
-
 }
 
 void decipherString(String input)
 {
-  Serial.print(input.length());
+  // Iterate through the input string; note that EOL char falls through resulting switch case, but EOL still takes up a character in the string.
   for (int i = 0; i <= input.length(); i++) 
   {
-    // Call morse letter
-    Serial.println(i);
-    Serial.print(input[i]);
+    Serial.println(input[i]);
+    translate(input[i]); // Calls translate() which sends the Char through a switch-case
   }
 }

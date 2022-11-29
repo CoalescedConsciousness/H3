@@ -1,0 +1,1 @@
+void translate(char letter);
