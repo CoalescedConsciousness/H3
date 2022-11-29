@@ -1,6 +1,12 @@
 #define LED_1 2
 #define SWITCH_1 3
 
+int LastCheck = LOW;
+int SHEEP = 0;
+
+unsigned long lastBounce = 0;
+unsigned long bounce = 50;
+
 void setup()
 {
   pinMode(LED_1, OUTPUT);
@@ -9,6 +15,27 @@ void setup()
 }
 
 void loop() {
-  Serial.println(digitalRead(SWITCH_1));
-  digitalRead(SWITCH_1) ? digitalWrite(LED_1, LOW) : digitalWrite(LED_1, HIGH);
+  int reading = digitalRead(SWITCH_1);
+  if (reading != LastCheck)
+  {
+    lastBounce = millis();
+  }
+
+  if ((millis() - lastBounce) > bounce)
+  {
+    if (!reading)
+    {
+      if (LastCheck == LOW)
+      {
+        SHEEP++;
+        Serial.println("INCREASED");
+        Serial.println(SHEEP);
+      }
+      LastCheck = HIGH;
+    }
+    else
+    {
+      LastCheck = LOW;
+    }
+  }
 }
