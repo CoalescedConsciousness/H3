@@ -3,6 +3,7 @@
 
 int LastCheck = LOW;
 int SHEEP = 0;
+int LightState = LOW;
 
 unsigned long lastBounce = 0;
 unsigned long bounce = 50;
@@ -27,6 +28,8 @@ void loop() {
     {
       if (LastCheck == LOW)
       {
+        LightState = !LightState;
+        digitalWrite(LED_1, LightState);
         SHEEP++;
         Serial.println("INCREASED");
         Serial.println(SHEEP);
