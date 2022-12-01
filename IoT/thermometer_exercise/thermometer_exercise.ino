@@ -14,12 +14,14 @@ void setup() {
 }
 
 void loop() {
-  double measurement = measureTemp(analogRead(THERMO));
-  if (LOW_TEMP < measurement < HIGH_TEMP)
-  {
-    digitalWrite(LED_1, HIGH);
-  }
-  else { digitalWrite(LED_1, LOW); }
+  double reading = analogRead(THERMO)
+  // double measurement = measureTemp(analogRead(THERMO));
+  // if (LOW_TEMP < measurement < HIGH_TEMP)
+  // {
+  //   digitalWrite(LED_1, HIGH);
+  // }
+  // else { digitalWrite(LED_1, LOW); }
+  analogWrite(LED_1, )
   delay(DELAY);
 
 
