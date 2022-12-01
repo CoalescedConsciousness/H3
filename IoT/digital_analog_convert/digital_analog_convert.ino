@@ -22,6 +22,7 @@ void loop() {
 // 13.3:
 void module3()
 {
+  
   for (int i = 0; i < sizeof(RGB); i++)
   {
     for (int x = 0; x <= 255; x++)
