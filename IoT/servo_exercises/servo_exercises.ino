@@ -2,7 +2,7 @@
 #include <LiquidCrystal.h>
 #define LED_1 10
 #define SWITCH_1 7
-int STATE = LOW;
+volatile int STATE = LOW;
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
