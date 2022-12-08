@@ -1,5 +1,6 @@
 # README:
 ![Alt text](20221208_131136.jpg)
+
 ## Description:
 Small setup that displays current Date and Time, as well as Temperature and Humidity, via OLED.
 Note that setup includes sanity check by way of two separate components measuring temperature, albeit one with less granularity (DS3231) than the other (DHT11).
