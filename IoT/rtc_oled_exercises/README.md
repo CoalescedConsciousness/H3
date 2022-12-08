@@ -1,7 +1,7 @@
 # README:
 ## Setup:
 - Pins used:
--- 2
+	- 2
 
 - Components used:
 -- DHT11 (Temperature and Humidity)
