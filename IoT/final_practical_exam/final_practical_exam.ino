@@ -23,12 +23,12 @@
 #define TZ -1  // To adjust for timezone differences.
 #define OLED_RESET 4 // Reset pin # (or -1 if sharing Arduino reset pin)
 
+// Instantiate devices:
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 RTC_DS3231 rtc;
 DHT dht(DHTPIN, DHTTYPE);
 
 char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-int counter = 0;
 
 // Variables used to control states as part of switch functionality
 int page = HIGH;
@@ -54,7 +54,6 @@ void setup () {
   for (int i = 0; i < sizeof(arrSwitch)/4; i++) // /3 due to int datatype size
   {
     pinMode(arrSwitch[i], INPUT);
-    // attachInterrupt(digitalPinToInterrupt(arrSwitch[i]), readSwitch, CHANGE);
   }
   attachInterrupt(digitalPinToInterrupt(arrSwitch[0]), changeBG, CHANGE);
   attachInterrupt(digitalPinToInterrupt(arrSwitch[1]), changeFunction, CHANGE);
@@ -80,12 +79,10 @@ void setup () {
   }
 }
 
-// Function "belonging" to 1st switch (arrSwitch[0]). Determines either BACKGROUND COLOUR or PAGE, depending on the state of s2Function, determined by changeFunction() below.
+// Function "belonging" to 1st button (arrSwitch[0]). Determines either BACKGROUND COLOUR or PAGE, depending on the state of s2Function, determined by changeFunction() below.
 void changeBG()
 {
-  // Serial.println("CHANGE BACKGROUND");
   int reading = digitalRead(arrSwitch[0]);
-  // Serial.println(reading);
   if (reading != arrState[0])
   {
     lastBounce = millis();
@@ -122,7 +119,7 @@ void changeBG()
   }
 }
 
-// Function "belonging" to 2nd switch (arrSwitch[1]). Determines the exact function of the two other switches (arrSwitch[0] and arrSwitch[2]), making a total of 4 possible "functions" (practically speaking) 
+// Function "belonging" to 2nd button (arrSwitch[1]). Determines the exact function of the two other switches (arrSwitch[0] and arrSwitch[2]), making a total of 4 possible "functions" (practically speaking) 
 void changeFunction()
 {
   // Serial.println("CHANGE FUNCTION");
@@ -150,6 +147,7 @@ void changeFunction()
   }
 }
 
+//
 void changeTime()
 {
   int reading = digitalRead(arrSwitch[2]);
@@ -208,16 +206,9 @@ void changeTime()
 void loop() 
 {
   display.clearDisplay();
-  
-  
 	display.setCursor(0,0); // Start at top-left corner
   display.setFont();  
 
-  // Changes the "page" in 3 second intervals, based purely on DateTime second, rather than delay().
-  // if (rtc.now().second() % 3 == 0)
-  // {
-  //   page = !page;
-  // }
   page ? rtcCycle() : dhtCycle(); 
   
   // Scroll 
@@ -228,6 +219,7 @@ void loop()
   
 }
 
+// The display configuration for data provided by the DHT
 void dhtCycle()
 {
   // display.setFont(&FreeSerif9pt7b); // Corrupts alignment when switching between different fonts, apparently.
@@ -244,6 +236,7 @@ void dhtCycle()
   display.display();
 }
 
+// The display configuration for the data provided by the RTC
 void rtcCycle()
 {
   DateTime now = rtc.now();
@@ -280,11 +273,13 @@ void rtcCycle()
   // Button states:
   display.print("Setter: ");
   display.print(prevClock);
+  display.print(" Function: ");
+  display.print(s2Function);
   display.display();
 
 }
 
-// Function for repeating code used to check whether or not value needs a leading zero (i.e. is below 10)
+// Function used to check whether or not value needs a leading zero (i.e. is below 10)
 void checkLeadingZero(int value)
 {
   if (value < 10) { display.print(0); }
