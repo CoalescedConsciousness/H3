@@ -5,13 +5,13 @@
 Small setup that displays current Date and Time, as well as Temperature and Humidity, via OLED.
 Using 3 small buttons, it is possible to customize the setup in various ways, namely:
 - Button 0:
-  - (1) Change the Page between DateTime + Temp OR Temp + Humidity
-  - (2) Change the display between WHITE TEXT on BLACK, or BLACK TEXT on WHITE
+  - (0) Change the Page between DateTime + Temp OR Temp + Humidity
+  - (1) Change the display between WHITE TEXT on BLACK, or BLACK TEXT on WHITE
 - Button 1:
-  - Change function sets, i.e. whether Button 0 and Button 2 uses (1) or (2) of their functions.
+  - Change function sets, i.e. whether Button 0 and Button 2 uses (0) or (1) of their functions.
 - Button 2:
   - (1) Increment time unit or reset time to match that of the connected computer
-  - (2) Select time unit for incrementation (0 - 4)
+  - (0) Select time unit for incrementation (0 - 4)
     - 0 = Hour 
     - 1 = Minute 
     - 2 = Second 
