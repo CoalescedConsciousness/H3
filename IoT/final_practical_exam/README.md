@@ -25,7 +25,7 @@ Setup includes a moderate level of styling, primarily meant to showcase what is 
 ## Setup:
 - Pins used:
 	- 2 (DHT)
-  - 3 - 5 (Button switches)
+  - 3, 5, 11 (Button switches)
 
 - Components used:
   - DHT11 (Temperature and Humidity)
@@ -59,7 +59,6 @@ Setup includes a moderate level of styling, primarily meant to showcase what is 
 - Adafruit_GFX.h
 - Adafruit_SSD1306.h
 - DHT.h
-- Front/FreeSerif9pt7b.h (DEPRECATED)
 ----
 ## Functions:
 ### readSwitch()
@@ -73,10 +72,3 @@ Writes (and formats) datetime and temperature data gatheref from RTC on OLED dis
 
 ### checkLeadingZero(int value)
 Checks if value is less than 10, and thus needs a leading 0, in terms of aesthetics.
-
-----
-## General runthrough:
-Components and setup is initialized.
-Loop clears OLED, and variable "page" flips when RTC returns a value of "second" where mod 3 == 0, thus changing between the 2 available readouts every 3 seconds.
-The loop is on a 1 second (1000ms) delay().
-OLED scrolls left to right, resetting each loop.
