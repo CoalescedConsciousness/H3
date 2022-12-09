@@ -183,7 +183,7 @@ void changeTime()
             arrClock[0] = HIGH;
             prevClock = 0;
           }
-          else if (prevClock = 2)
+          else if (prevClock == 2)
           {
             arrClock[2] = LOW;
             prevClock = 4; // 4 is used to reset clock to connected computer time.
